@@ -47,23 +47,19 @@ Key features:
 #### User Stories
 
 Create an account & Login
-- As a user I can view the landing page with information about the platform so I can learn more about it.
-- As a user I can see the navbar on every page so I can easily navigate the site.
-- As a logged out user I can see the login and sign up links in the navbar so I can navigate to them easily.
-- As a new user I can create an account so I can log in and use the features.
-- As a returning user I can log in to my account so I can enjoy the site.
-- As a logged in user I can maintain my logged in status so I can keep using the site.
-- As a logged in user I can see the add highlight, liked, profile and logout links in the navbar so I can easily navigate to them.
+- **Landing Page:** As a user I can view the landing page with information about the platform so I can learn more about it.
+- **Navbar:** As a user I can see the navbar on every page so I can easily navigate the site.
+- **Create Account:** As a new user I can create an account so I can log in and use the features.
+- **Log in:** As a returning user I can log in to my account so I can enjoy the site.
+- **Log out:** user log out log out of my account
+- **Remain logged in:**  As a logged in user I can maintain my logged in status so I can keep using the site.
+
 
 Creating Highlights
-- As a user I can create a highlight so I can share my thoughts and feelings.
-- As a user I can tag another user in my highlight so I can show my support for them.
-- As a user I can add a tag to my highlight so I can categorize it.
-- As a user I can add a location to my highlight so I can show where I was when I made that highlight.
-- As a user I can add an image to my highlight so everyone can see it.
-- As a user I can add a description to my highlight so there is more detail to read.
-- As a user I can update one of my highlights so I can fix any mistakes I made.
-- As a user I can delete one of my highlights so I can remove it from the site.
+- **Create Highlight:** As a user I can create a highlight so I can share my thoughts and feelings.
+- **View Highlight:** 
+- **Update a Highlight:** As a user I can update one of my highlights so I can fix any mistakes I made.
+- **Delete Highlight:** As a user I can delete one of my highlights so I can remove it from the site.
 
 The Feed
 - As a user I can see highlights ordered by the most recent so that each time I visit the site the content is fresh.
@@ -100,6 +96,9 @@ General
 - As a site owner I want the site to be secure so I can use it safely and securely.
 - As a site owner I want a 404 page so users know when they have tried to access a page that does not exist.
 - As a user I want messages feedback messages to be shown when I create, update or delete a highlight or comment so that I can see if I am using the site correctly.
+
+Features to add once MVP is created
+- Location data
 
 ### 2. Scope
 
