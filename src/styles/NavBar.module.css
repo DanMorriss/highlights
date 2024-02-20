@@ -1,0 +1,24 @@
+.NavBar {
+  background-color: #decfbc;
+}
+
+.NavBarBrand {
+  font-family: "Homemade Apple", cursive;
+}
+
+.NavBarBrand h1 {
+  display: inline;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+}
+
+.NavBarBrand img {
+    transition: 0.3s;
+}
+
+.NavBarBrand img:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+    transform: rotate(-8deg);
+    
+}
