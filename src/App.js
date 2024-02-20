@@ -1,12 +1,10 @@
 import './App.css';
-import { Button } from 'react-bootstrap';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
     <div className="App">
-      <p>Below is a button from React Bootstrap</p>
-      <Button variant="primary">I'm that button, click me</Button>
-      <p>It doesn't work yet</p>
+      <NavBar />
     </div>
   );
 }

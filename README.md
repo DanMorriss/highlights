@@ -121,17 +121,17 @@ Visit backend repo.
 
 #### Wireframes
 
-![Landing page wireframe](/docs/landing-page-wireframe.png)
-![signup wireframe](/docs/signup-wireframe.png)
-![login wireframe](/docs/login-wireframe.png)
-![feed wireframe](/docs/feed-wireframe.png)
-![create highlight wireframe](/docs/add-a-highlight-woreframe.png)
-![highlight wireframe](/docs/highlight-wireframe.png)
-![profile wireframe](/docs/profile-wireframe.png)
+![Landing page wireframe](/docs/wireframes/landing-page-wireframe.png)
+![signup wireframe](/docs/wireframes/signup-wireframe.png)
+![login wireframe](/docs/wireframes/login-wireframe.png)
+![feed wireframe](/docs/wireframes/feed-wireframe.png)
+![create highlight wireframe](/docs/wireframes/add-a-highlight-woreframe.png)
+![highlight wireframe](/docs/wireframes/highlight-wireframe.png)
+![profile wireframe](/docs/wireframes/profile-wireframe.png)
 
 ### 5. Surface
 
-![Color Palette](/docs/color-palette.png)
+![Color Palette](/docs//readme/color-palette.png)
 
 ## Technologies Used
 
@@ -140,6 +140,8 @@ Visit backend repo.
 ### Libraries & Tools
 
 React Bootstrap
+
+[Favicon.io](https://favicon.io/favicon-converter/) for the favicon conversion
 
 ## Validation
 
