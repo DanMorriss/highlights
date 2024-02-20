@@ -1,5 +1,6 @@
 .NavBar {
-  background-color: #decfbc;
+  /* background-color: #decfbc; */
+  background-color: #CF8562;
 }
 
 .NavBarBrand {
@@ -36,5 +37,5 @@
 }
 
 .Active i {
-  color: #CF8562;
+  filter: drop-shadow(0 0 0.4rem #FFF5E6);
 }
