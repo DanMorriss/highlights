@@ -1,4 +1,5 @@
 [Deployed Frontend Site](https://pp5-highlights-a86c2f8f4016.herokuapp.com/)
+[Deployed API](https://drf-highlights-319d26c2d75e.herokuapp.com/)
 
 Needed to run the following commands to use the correct version of npm:
 `nvm install 16`  
