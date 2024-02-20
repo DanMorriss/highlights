@@ -31,6 +31,10 @@
 
 }
 
+.Active {
+  text-decoration: solid underline 1.5px;
+}
+
 .Active i {
   color: #CF8562;
 }
