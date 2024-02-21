@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import {
   Col,
   Container,
@@ -11,10 +11,10 @@ import {
 import styles from "../../styles/SignInForm.module.css";
 import { Link, useHistory } from "react-router-dom/cjs/react-router-dom";
 import axios from "axios";
-import { setCurrentUserContext } from "../../App";
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 const SignInForm = () => {
-  const setCurrentUser = useContext(setCurrentUserContext);
+  const setCurrentUser = useSetCurrentUser();
 
   const [signInData, setSignInData] = useState({
     username: "",
