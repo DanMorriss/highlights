@@ -6,3 +6,13 @@
     border-radius: 1.5rem;
 
 }
+
+.InageCol {
+    text-align: center;
+}
+
+.Image {
+    max-width: 40vw;
+    border-radius: 50%;
+    height: auto;
+}

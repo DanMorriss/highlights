@@ -48,50 +48,40 @@ Key features:
 #### User Stories
 
 Create an account & Login
-- **Landing Page:** As a user I can view the landing page with information about the platform so I can learn more about it.
-- **Navbar:** As a user I can see the navbar on every page so I can easily navigate the site.
-- **Create Account:** As a new user I can create an account so I can log in and use the features.
-- **Log in:** As a returning user I can log in to my account so I can enjoy the site.
-- **Log out:** user log out log out of my account
-- **Remain logged in:**  As a logged in user I can maintain my logged in status so I can keep using the site.
+- Landing Page
+- Navbar
+- Create Account
+- Log in
+- Log out
+- Remain logged in
 
 
 Creating Highlights
-- **Create Highlight:** As a user I can create a highlight so I can share my thoughts and feelings.
-- **View Highlight:** 
-- **Update a Highlight:** As a user I can update one of my highlights so I can fix any mistakes I made.
-- **Delete Highlight:** As a user I can delete one of my highlights so I can remove it from the site.
+- Create Highlight
+- View Highlight
+- Update a Highlight
+- Delete Highlight
 
-The Feed
-- As a user I can see highlights ordered by the most recent so that each time I visit the site the content is fresh.
-- As a user I can continue scrolling through the highlights without having to refresh the page or click next so that I can see more highlights.
-- As a user I can see the posts of users that I follow so that I can see what they are up to.
-- As a user I can see posts I have likes so that I can revisit the moments that I enjoyed.
-- As a user I can search for for keywords so that I can to discover content I am interested in.
-- As a user I can filter by category so I can see highlights that I am interested in.
-- As a user I can filter by location so I can see highlights that are close to me.
+Highlight Feeds
+- Highlights Feed
+- Liked Highlights
+- Discover Highlights
 
 Profile pages
-- As a user I can add a profile avatar so I can show my picture.
-- As a user I can add a bio so I can show my story.
-- As a user I can add a name so I can show my name.
-- As a user I can add a location so I can show my location.
-- As a user I can edit my profile so I can update any information I need to.
-- As a user I can change my password so I can protect my account.
-- As a user I can view other users profiles so I can see their highlights and find out more about them.
-- As a user I can see a list of the top profiles so I can see who is most active on the site.
-- As a user I can see all the highlight from a user in their profile so I can see what they are up to.
-- As a user I can see how many followers, following and posts users have in their profile so I can see how active they are.
+- Edit Profile
+- Change Password
+- Who to Follow List
+- User Profiles
 
 Interactivity
-- As a user I can like/unlike another users highlight so I can show my support for it.
-- As a user I can comment on another users highlight so I can start a conversation.
-- As a user I can update a comment I have made on another users highlight so I can fix any mistakes I made.
-- As a user I can delete a comment I have made on another users highlight so I can remove it from the site.
-- As a user I can follow another user so I can see their highlights in my feed.
-- As a user I can un-follow a user so I no longer see their highlights in my feed.
+- Like/un-like a Highlight
+- Comment on a Highlight
+- Edit a Comment
+- Delete a Comment
+- Follow/un-follow a User
 
 General
+- Contact Form
 - As a site owner I want the site to be fully responsive across all screen sizes so it can be used on any device.
 - As a site owner I want the site to be easy to use so I can easily navigate and use it.
 - As a site owner I want the site to be secure so I can use it safely and securely.
