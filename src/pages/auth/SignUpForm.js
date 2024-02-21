@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Container, Form, Button, Alert, Row, Col, Image } from "react-bootstrap";
+import {
+  Container,
+  Form,
+  Button,
+  Alert,
+  Row,
+  Col,
+  Image,
+} from "react-bootstrap";
 import styles from "../../styles/SignUpForm.module.css";
 import axios from "axios";
 import { Link, useHistory } from "react-router-dom/cjs/react-router-dom";
@@ -100,13 +108,17 @@ const SignUpForm = () => {
         </Container>
         <Container className="text-center pt-3">
           <p>
-            Already have an account? <Link to="/signin">Sign in
-            </Link>
+            Already have an account? <Link to="/signin">Sign in</Link>
           </p>
         </Container>
       </Col>
       <Col md={6} className={`${styles.ImageCol} d-none d-md-block my-auto`}>
-        <Image className={styles.Image} src={"https://res.cloudinary.com/deahxwfve/image/upload/v1708518587/What_was_the_best_part_of_your_day_square_1_p6pmnz.png"} />
+        <Image
+          className={styles.Image}
+          src={
+            "https://res.cloudinary.com/deahxwfve/image/upload/v1708518587/What_was_the_best_part_of_your_day_square_1_p6pmnz.png"
+          }
+        />
       </Col>
     </Row>
   );
