@@ -4,9 +4,19 @@ import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom/cjs/react-router-dom";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
+import Avatar from "./Avatar";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
+  const addHighlightIcon = (
+    <NavLink
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/highlights/create"
+    >
+      <i className="fa-solid fa-feather-pointed"></i>Add Highlight
+    </NavLink>
+  );
 
   const loggedOutLinks = (
     <>
@@ -27,17 +37,57 @@ const NavBar = () => {
     </>
   );
 
-  const loggedInLinks = <>{currentUser?.username}</>;
+  const loggedInLinks = (
+    <>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/feed"
+      >
+        <i className="fas fa-stream"></i>Feed
+      </NavLink>
+
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/liked"
+      >
+        <i className="fas fa-heart"></i>Liked
+      </NavLink>
+
+      <NavLink
+        className={styles.NavLink}
+        to="/"
+        onCLick={() => {}}
+      >
+        <i className="fas fa-sign-out-alt"></i>Sign Out
+      </NavLink>
+
+      <NavLink
+        className={styles.NavLink}
+        to={`/profiles/${currentUser?.profile_id}`}
+      >
+        <Avatar
+          src={currentUser?.profile_image}
+          height={40}
+          className={styles.Avatar}
+        /><span className="d-md-none">{currentUser?.username}</span>
+      </NavLink>
+    </>
+  );
 
   return (
     <Navbar className={styles.NavBar} expand="md" fixed="top">
-      <Container>
+      {/* <Container> */}
         <NavLink className={styles.NavLink} to="/about">
           <Navbar.Brand className={styles.NavBarBrand}>
             <img src={logo} alt="highlights logo" height={45} />
-            <h1>Highlights</h1>
+            <h1 className="d-md-none d-lg-inline">Highlights</h1>
           </Navbar.Brand>
         </NavLink>
+
+        {currentUser && addHighlightIcon}
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-left">
@@ -52,7 +102,7 @@ const NavBar = () => {
             {currentUser ? loggedInLinks : loggedOutLinks}
           </Nav>
         </Navbar.Collapse>
-      </Container>
+      {/* </Container> */}
     </Navbar>
   );
 };
