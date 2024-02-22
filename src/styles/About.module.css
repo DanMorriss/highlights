@@ -1,0 +1,29 @@
+.Background {
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-image: url('https://res.cloudinary.com/deahxwfve/image/upload/v1708618015/3_pjzob5.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #453a2c;
+}
+
+.Handwritten {
+    font-family: 'Homemade Apple', cursive;
+}
+
+.Heading2 {
+    font-size: 1.5rem;
+}
+
+.Button {
+    border-radius: 1.5rem;
+    margin: 0.5rem;
+}
