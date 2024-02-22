@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav} from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom/cjs/react-router-dom";
@@ -9,10 +9,12 @@ import {
 } from "../contexts/CurrentUserContext";
 import Avatar from "./Avatar";
 import axios from "axios";
+import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
+  const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
   const handleSignOut = async () => {
     try {
@@ -89,7 +91,12 @@ const NavBar = () => {
   );
 
   return (
-    <Navbar className={styles.NavBar} expand="md" fixed="top">
+    <Navbar
+      expanded={expanded}
+      className={styles.NavBar}
+      expand="md"
+      fixed="top"
+    >
       <NavLink className={styles.NavLink} to="/about">
         <Navbar.Brand className={styles.NavBarBrand}>
           <img src={logo} alt="highlights logo" height={45} />
@@ -99,7 +106,11 @@ const NavBar = () => {
 
       {currentUser && addHighlightIcon}
 
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Toggle
+        onClick={() => setExpanded(!expanded)}
+        aria-controls="basic-navbar-nav"
+        ref={ref}
+      />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto text-left">
           <NavLink
@@ -112,7 +123,6 @@ const NavBar = () => {
           </NavLink>
 
           {currentUser ? loggedInLinks : loggedOutLinks}
-
         </Nav>
       </Navbar.Collapse>
     </Navbar>
