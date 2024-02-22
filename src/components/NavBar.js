@@ -100,7 +100,6 @@ const NavBar = () => {
       <NavLink className={styles.NavLink} to="/about">
         <Navbar.Brand className={styles.NavBarBrand}>
           <img src={logo} alt="highlights logo" height={45} />
-          <h1 className="d-md-none d-lg-inline">Highlights</h1>
         </Navbar.Brand>
       </NavLink>
 
