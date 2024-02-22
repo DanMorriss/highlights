@@ -24,6 +24,10 @@
   transform: rotate(-8deg);
 }
 
+.Plus {
+  font-size: 1.4rem;
+}
+
 .NavLink {
   color: #453a2c;
 }
@@ -56,8 +60,4 @@ i:hover {
   padding: 1rem;
   margin-top: auto;
 
-}
-
-@media screen and (max-width: 768px) {
-  
 }

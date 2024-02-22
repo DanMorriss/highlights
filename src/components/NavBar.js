@@ -31,7 +31,7 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/highlights/create"
     >
-      <i className="fa-solid fa-feather-pointed"></i>Add Highlight
+      <i className="fa-solid fa-feather-pointed"></i><span className={styles.Plus}>+</span> Highlight
     </NavLink>
   );
 
@@ -73,7 +73,7 @@ const NavBar = () => {
       </NavLink>
 
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
-        <i className="fas fa-sign-out-alt"></i>Sign Out
+        <i className="fas fa-sign-out-alt"></i>Signout
       </NavLink>
 
       <NavLink
