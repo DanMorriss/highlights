@@ -97,7 +97,7 @@ const NavBar = () => {
       expand="md"
       fixed="top"
     >
-      <NavLink className={styles.NavLink} to="/about">
+      <NavLink className={styles.NavLink} to="/">
         <Navbar.Brand className={styles.NavBarBrand}>
           <img src={logo} alt="highlights logo" height={45} />
         </Navbar.Brand>
@@ -116,7 +116,7 @@ const NavBar = () => {
             exact
             className={styles.NavLink}
             activeClassName={styles.Active}
-            to="/"
+            to="/discover"
           >
             <i className="fa-solid fa-magnifying-glass"></i>Discover
           </NavLink>
