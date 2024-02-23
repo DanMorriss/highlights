@@ -9,6 +9,8 @@ import {
   Image,
 } from "react-bootstrap";
 import styles from "../../styles/SignUpForm.module.css";
+import appStyles from "../../App.module.css";
+import btnStyles from "../../styles/Buttons.module.css";
 import axios from "axios";
 import { Link, useHistory } from "react-router-dom/cjs/react-router-dom";
 
@@ -43,7 +45,7 @@ const SignUpForm = () => {
     <Row className="mt-3">
       <Col className="my-auto" md={6}>
         <Container>
-          <h1 className="text-center pb-4">Sign up</h1>
+          <h1 className={`${appStyles.Handwritten} text-center pb-4`}>Sign up</h1>
           <Form onSubmit={handleSubmit} className="d-flex flex-column">
             <Form.Group controlId="username">
               <Form.Label className="d-none">Username</Form.Label>
@@ -96,7 +98,11 @@ const SignUpForm = () => {
               </Alert>
             ))}
 
-            <Button variant="primary" type="submit" className={styles.Button}>
+            <Button
+              variant="primary"
+              type="submit"
+              className={btnStyles.Button}
+            >
               Sign up
             </Button>
             {errors.non_field_errors?.map((message, idx) => (

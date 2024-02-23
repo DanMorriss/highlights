@@ -9,6 +9,8 @@ import {
   Alert,
 } from "react-bootstrap";
 import styles from "../../styles/SignInForm.module.css";
+import btnStyles from "../../styles/Buttons.module.css";
+import appStyles from "../../App.module.css";
 import { Link, useHistory } from "react-router-dom/cjs/react-router-dom";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
@@ -45,7 +47,7 @@ const SignInForm = () => {
     <Row className="mt-3">
       <Col className="my-auto" md={6}>
         <Container>
-          <h1 className="text-center pb-4">Sign in</h1>
+          <h1 className={`${appStyles.Handwritten} text-center pb-4`}>Sign in</h1>
           <Form onSubmit={handleSubmit} className="d-flex flex-column">
             <Form.Group controlId="username">
               <Form.Label className="d-none">Username</Form.Label>
@@ -82,7 +84,7 @@ const SignInForm = () => {
             ))}
 
             <Button
-              className="{styles.Button}"
+              className={btnStyles.Button}
               variant="primary"
               type="submit"
               onClick={handleSubmit}

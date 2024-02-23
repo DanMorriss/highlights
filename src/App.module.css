@@ -5,21 +5,14 @@
   min-height: 100vh;
 }
 
-/* i {
-  padding: 1rem;
-  font-size: 1.5rem;
-  transition: 0.3s;
-}
-
-i:hover {
-    transform: scale(1.2);
-    transition: 0.3s;
-} */
-
 .Main {
   padding-top: 6rem;
 }
 
-h1 {
+/* h1 {
   font-family: "Homemade Apple", cursive;
+} */
+
+.Handwritten {
+  font-family: 'Homemade Apple', cursive;
 }
