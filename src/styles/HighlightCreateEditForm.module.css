@@ -1,0 +1,11 @@
+.Container {
+    min-height: 343px;
+  }
+
+  input[type="file"] {
+    display: none;
+}
+
+.FormButtons {
+    width: 7rem;
+}

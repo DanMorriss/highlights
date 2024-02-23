@@ -9,10 +9,12 @@
   padding-top: 6rem;
 }
 
-/* h1 {
-  font-family: "Homemade Apple", cursive;
-} */
-
 .Handwritten {
   font-family: 'Homemade Apple', cursive;
+}
+
+.Image {
+  max-width: 40vw;
+  width: 100%;
+  height: auto;
 }

@@ -2,3 +2,14 @@
     border-radius: 1.5rem;
     margin: 0.5rem;
 }
+
+.Blue {
+    background-color: #2142b2;
+    color: #ffffff;
+}
+
+.Blue:hover {
+    border: 1px solid #2142b2;
+    background-color: #ffffff;
+    color: #2142b2;
+  }
