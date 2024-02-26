@@ -142,4 +142,4 @@ React Router
 
 ## Bugs
 
-
+- The console was refreshing 100 times a second when a user was not logged in in the local version of the code, in the deployed version once a successful login happened a white page was displayed. Inside the CurrentUserContext.js file I was trying to return axiosReq(err.config) rather than axios(err.config).
