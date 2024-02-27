@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -12,7 +12,10 @@ import styles from "../../styles/HighlightCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Buttons.module.css";
 import Asset from "../../components/Asset";
-import { Image } from "react-bootstrap";
+import { Alert, Image } from "react-bootstrap";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+
+import { axiosReq } from "../../api/axiosDefaults";
 
 function HighlightCreateForm() {
   const [errors, setErrors] = useState({});
@@ -20,11 +23,14 @@ function HighlightCreateForm() {
   const [highlightData, setHighlightData] = useState({
     title: "",
     description: "",
-    category: "",
+    // category: "",
     tagged_user: "",
     image: "",
   });
-  const { title, description, category, tagged_user, image } = highlightData;
+  const { title, description, tagged_user, image } = highlightData;
+
+  const imageInput = useRef(null);
+  const history = useHistory();
 
   const handleChange = (e) => {
     setHighlightData({
@@ -43,6 +49,27 @@ function HighlightCreateForm() {
     }
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+
+    formData.append("title", title);
+    formData.append("description", description);
+    // formData.append("category", category);
+    formData.append("tagged_user", tagged_user);
+    formData.append("image", imageInput.current.files[0]);
+
+    try {
+      const { data } = await axiosReq.post("/highlights/", formData);
+      history.push(`/highlights/${data.id}`);
+    } catch (err) {
+      console.log(err);
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data);
+      }
+    }
+  };
+
   const textFields = (
     <div className="text-center">
       <Form.Group controlId="title">
@@ -56,6 +83,11 @@ function HighlightCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors.title?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
       <Form.Group controlId="description">
         <Form.Label>Description</Form.Label>
@@ -69,6 +101,11 @@ function HighlightCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors.description?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
       <Form.Group controlId="category">
         <Form.Label>Category</Form.Label>
@@ -77,7 +114,6 @@ function HighlightCreateForm() {
           name="category"
           as="select"
           defaultValue="Pick a category"
-          value={category}
           onChange={handleChange}
         >
           <option>Pick a category</option>
@@ -86,6 +122,11 @@ function HighlightCreateForm() {
           <option>3</option>
         </Form.Control>
       </Form.Group>
+      {errors.category?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
       <Form.Group controlId="tagged_user">
         <Form.Label>Tag someone</Form.Label>
@@ -98,6 +139,11 @@ function HighlightCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors.tagged_user?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue} ${styles.FormButtons}`}
@@ -108,7 +154,7 @@ function HighlightCreateForm() {
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue} ${styles.FormButtons}`}
-        onClick={() => {}}
+        onClick={() => history.goBack()}
       >
         Cancel
       </Button>
@@ -134,6 +180,11 @@ function HighlightCreateForm() {
               Change the image
             </Form.Label>
           </div>
+          {errors.image?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
         </>
       ) : (
         <Form.Label
@@ -149,6 +200,7 @@ function HighlightCreateForm() {
         accept="image/*"
         onChange={handleChangeImage}
         className="text-center shadow-lg"
+        ref={imageInput}
       />
     </Form.Group>
   );
@@ -164,7 +216,7 @@ function HighlightCreateForm() {
       <h1 className={`${appStyles.Handwritten} text-center pt-3 pb-3`}>
         Create a Highlight
       </h1>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Row>
           <Col md={6} sm={12} className="d-none d-md-block p-0 p-md-2">
             <Container className={appStyles.Content}>{textFields}</Container>
