@@ -83,7 +83,9 @@ function HighlightCreateForm() {
     formData.append("description", description);
     formData.append("category", category);
     // formData.append("tagged_user", tagged_user);
-    formData.append("image", imageInput.current.files[0]);
+    if (imageInput.current.files[0]) {
+      formData.append("image", imageInput.current.files[0]);
+    }
 
     try {
       const { data } = await axiosReq.post("/highlights/", formData);
