@@ -26,9 +26,9 @@ function HighlightCreateForm() {
     category: "",
     // tagged_user: "",
     image: "",
-    location: "",
+    // location: "",
   });
-  const { title, description, category, image, location } = highlightData;
+  const { title, description, category, image } = highlightData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -50,25 +50,30 @@ function HighlightCreateForm() {
     }
   };
 
-  const getLocation = () => {
-    const currentLocation = navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
-        const locationApi = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
-        fetch(locationApi).then(response =>response.json()).then(data => {
-          setHighlightData({
-            ...highlightData,
-            location: data.city + ", " + data.countryCode
-          })
-        })
-      },
-      (error) => {
-        console.log(error);
-      }
-    )
-  
-  };
+  // const getLocation = () => {
+  //   const currentLocation = navigator.geolocation.getCurrentPosition(
+  //     (position) => {
+  //       const latitude = position.coords.latitude;
+  //       const longitude = position.coords.longitude;
+  //       const locationApi = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+  //       fetch(locationApi).then(response =>response.json()).then(data => {
+  //         setHighlightData({
+  //           ...highlightData,
+  //           location: data.city + ", " + data.countryCode
+  //         })
+  //       })
+  //     },
+  //     (error) => {
+  //       console.log(error);
+  //     }
+  //   )
+  // };
+
+  // const locationGrabber = (
+  //   <div className={`${btnStyles.Button} ${btnStyles.Blue} btn`} onClick={getLocation}>
+  //     Add Current Location
+  //   </div>
+  // );
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -92,6 +97,7 @@ function HighlightCreateForm() {
   };
 
 
+  // TEXT FIELDS
   const textFields = (
     <div className="text-center">
       <Form.Group controlId="title">
@@ -235,12 +241,6 @@ function HighlightCreateForm() {
   //   </Form.Group>
   // );
 
-  const locationGrabber = (
-    <div className={`${btnStyles.Button} ${btnStyles.Blue} btn`} onClick={getLocation}>
-      Add Current Location
-    </div>
-  );
-
   return (
     <>
       <h1 className={`${appStyles.Handwritten} text-center pt-3 pb-3`}>
@@ -256,7 +256,6 @@ function HighlightCreateForm() {
             <Container
               className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
             >
-              {/* <div className="">{imageField}</div> */}
               <div>
                 <Form.Group className="text-center">
                   {image ? (
@@ -300,8 +299,6 @@ function HighlightCreateForm() {
                   />
                 </Form.Group>
               </div>
-
-              {locationGrabber}
 
               <div className="d-md-none">{textFields}</div>
             </Container>
