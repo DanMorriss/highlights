@@ -4,6 +4,7 @@ import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Avatar from "../../components/Avatar";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { axiosRes } from "../../api/axiosDefaults";
 
 const Highlight = (props) => {
   const {
@@ -23,9 +24,42 @@ const Highlight = (props) => {
     likes_count,
     like_id,
     highlightPage,
+    setHighlight,
   } = props;
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+
+  const handleLike = async () => {
+    try {
+      const {data} = await axiosRes.post("/likes/", {highlight: id})
+      setHighlight((prevHighlight) => ({
+        ...prevHighlight,
+        results: prevHighlight.results.map((highlight) => {
+          return highlight.id === id
+          ? {...highlight, likes_count: highlight.likes_count + 1, like_id: data.id}
+          : highlight;
+        }),
+      }));
+    } catch(err) {
+      console.log(err)
+    }
+  }
+
+  const handleUnlike = async () => {
+    try {
+      const {data} = await axiosRes.delete(`/likes/${like_id}`)
+      setHighlight((prevHighlight) => ({
+        ...prevHighlight,
+        results: prevHighlight.results.map((highlight) => {
+          return highlight.id === id
+          ? {...highlight, likes_count: highlight.likes_count - 1, like_id: null}
+          : highlight;
+        }),
+      }))
+    } catch(err) {
+      console.log(err)
+    }
+  }
 
   return (
     <Card className={styles.Highlight}>
@@ -56,11 +90,11 @@ const Highlight = (props) => {
               <i className="far fa-heart"></i>
             </OverlayTrigger>
           ) : like_id ? (
-            <span onClick={() => {}}>
+            <span onClick={handleUnlike}>
               <i className={`fas fa-heart ${styles.Heart}`} />
             </span>
           ) : currentUser ? (
-            <span onClick={() => {}}>
+            <span onClick={handleLike}>
               <i className={`far fa-heart ${styles.HeartOutline}`} />
             </span>
           ) : (

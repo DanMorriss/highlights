@@ -103,7 +103,7 @@ function HighlightCreateForm() {
   const textFields = (
     <div className="text-center">
       <Form.Group controlId="title">
-        <Form.Label>Title</Form.Label>
+        <Form.Label>What was the highlight of your day?</Form.Label>
         <Form.Control
           className={styles.Input}
           type="text"
@@ -143,9 +143,11 @@ function HighlightCreateForm() {
           className={styles.Input}
           name="category"
           as="select"
-          value={category}
+          defaultValue="Please select a category"
+          // value={category}
           onChange={handleChange}
         >
+          <option value="select">Please select a category</option>
           <option value="family-and-friends">Family and Friends</option>
           <option value="pets-and-animals">Pets and Animals</option>
           <option value="relationships">Relationships</option>
@@ -254,7 +256,7 @@ function HighlightCreateForm() {
             <Container className={appStyles.Content}>{textFields}</Container>
           </Col>
 
-          <Col className="" md={6} sm={12}>
+          <Col className="p-md-2" md={6} sm={12}>
             <Container
               className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
             >
