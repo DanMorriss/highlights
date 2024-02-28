@@ -8,6 +8,7 @@ import SignInForm from "./pages/auth/SignInForm";
 import About from "./pages/about/About";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import HighlightCreateForm from "./pages/highlights/HighlightCreateForm";
+import HighlightPage from "./pages/highlights/HighlightPage";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/highlights/create" render={() => <HighlightCreateForm />} />
+          <Route exact path="/highlights/:id" render={() => <HighlightPage />} />
           <Route exact path="/discover" render={() => <h1>Discover Page</h1>} />
           <Route render={() => <h1>Page not found</h1>} />
 
