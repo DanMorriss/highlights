@@ -9,10 +9,11 @@ import About from "./pages/about/About";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import HighlightCreateForm from "./pages/highlights/HighlightCreateForm";
 import HighlightPage from "./pages/highlights/HighlightPage";
+import HighlightsPage from "./pages/highlights/HighlightsPage";
 
 function App() {
   const currentUser = useCurrentUser();
-  console.log(currentUser);
+  const profile_id = currentUser?.profile_id || "";
 
   return (
     <div className={styles.App}>
@@ -22,11 +23,44 @@ function App() {
           <Route exact path="/" render={() => <About />} />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
-          <Route exact path="/highlights/create" render={() => <HighlightCreateForm />} />
-          <Route exact path="/highlights/:id" render={() => <HighlightPage />} />
-          <Route exact path="/discover" render={() => <h1>Discover Page</h1>} />
+          <Route
+            exact
+            path="/highlights/create"
+            render={() => <HighlightCreateForm />}
+          />
+          <Route
+            exact
+            path="/highlights/:id"
+            render={() => <HighlightPage />}
+          />
+          <Route
+            exact
+            path="/discover"
+            render={() => (
+              <HighlightsPage message="No results found, try changing your search" />
+            )}
+          />
+          <Route
+            exact
+            path="/feed"
+            render={() => (
+              <HighlightsPage
+                message="No results found, try changing your search or follow a user"
+                filter={`owner__followed__owner__profile=${profile_id}&`}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/liked"
+            render={() => (
+              <HighlightsPage
+                message="No results found, try changing your search or like a post"
+                filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
+              />
+            )}
+          />
           <Route render={() => <h1>Page not found</h1>} />
-
         </Switch>
       </Container>
     </div>
