@@ -150,4 +150,8 @@ Inside the CurrentUserContext.js file I was trying to return axiosReq(err.config
 
 - Trying to change the way the date is displaying on the highlights in the backend was causing the frontend form to throw a 400 error, so the logic was moved into the highlight.js file in the frontend.
 
-- The like button was not working on the feed and discover pages and the liked page was not loading. 
+- The liked page was not loading. There was a type in the filter prop in App.js, that let the liked page load. 
+
+- The like button was not displaying the like when clicked on the feel and discover pages but the changes was reaching the database. The page needed to be reloaded to show the like/unlike. There was typos in the Highlight.js handleLike and handleUnlike functions.
+
+- The liked page was showing any result with a like, not ones that are liked by the signed in user.
