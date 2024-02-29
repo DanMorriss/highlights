@@ -13,6 +13,8 @@ import Highlight from "./Highlight";
 
 import NoResults from "../../assets/no-results.png";
 import Asset from "../../components/Asset";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 function HighlightsPage({ message, filter = "" }) {
   const [highlights, setHighlights] = useState({ results: [] });
@@ -39,7 +41,7 @@ function HighlightsPage({ message, filter = "" }) {
     }, 1000);
     return () => {
       clearTimeout(timer);
-    }
+    };
   }, [filter, query, pathname]);
 
   return (
@@ -60,13 +62,19 @@ function HighlightsPage({ message, filter = "" }) {
         {hasLoaded ? (
           <>
             {highlights.results.length ? (
-              highlights.results.map((highlight) => (
-                <Highlight
-                  key={highlight.id}
-                  {...highlight}
-                  setHighlights={setHighlights}
-                />
-              ))
+              <InfiniteScroll
+                children={highlights.results.map((highlight) => (
+                  <Highlight
+                    key={highlight.id}
+                    {...highlight}
+                    setHighlights={setHighlights}
+                  />
+                ))}
+                dataLength={highlights.results.length}
+                loader={<Asset spinner />}
+                hasMore={!!highlights.next}
+                next={() => fetchMoreData(highlights, setHighlights)}
+              />
             ) : (
               <Container className={appStyles.Content}>
                 <Asset src={NoResults} message={message} />

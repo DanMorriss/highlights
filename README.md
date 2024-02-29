@@ -138,6 +138,8 @@ Visit backend repo.
 
 React Router
 
+[Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component)
+
 ## Validation
 
 ## Testing
