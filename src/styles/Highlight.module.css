@@ -1,8 +1,8 @@
 .Highlight {
-  background-color: #ffffff;
-  border: 1px solid #dadadf;
-  border-radius: 2px;
-  margin-bottom: 16px;
+  background-color: #FFF5E6;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  box-shadow: 0 0 0.5rem #decfbc;
 }
 
 .Highlight figure,
@@ -30,6 +30,14 @@ h5 {
   font-family: "Homemade Apple", cursive;
   font-size: 1.4rem;
   font-weight: 900;
+}
+
+.DiaryFontLinkStandardDisplay {
+  font-family: "Homemade Apple", cursive;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color:#453a2c;
+  text-decoration: none;
 }
 
 .DiaryQuestions {

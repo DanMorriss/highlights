@@ -26,8 +26,9 @@
 }
 
 .Content {
-  background-color: #decfbc;
+  background-color: #FFF5E6;
   padding: 1rem;
-  border-radius: 0.3rem;
-  border: 1px solid #cdb990;
+  border-radius: 1rem;
+  /* border: 1px solid #cdb990; */
+  box-shadow: 0 0 0.5rem #decfbc;
 }

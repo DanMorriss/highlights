@@ -81,45 +81,61 @@ const Highlight = (props) => {
   };
 
   return (
-    <Card className={styles.Highlight}>
+    <Card className={`${styles.Highlight}`}>
       <Card.Body>
         <Media className="align-items-center justify-content-between">
           <Link to={`/profiles/${profile_id}`}>
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
-          <div className="d-flex align-items-center">
-            <span className={`${styles.DiaryFont}`}>{formattedDate}</span>
-            {is_owner && highlightPage && "..."}
-          </div>
+
+          {!highlightPage ? (
+            <Link to={`/highlights/${id}`}>
+              <div className="d-flex align-items-center">
+                <span className={`${styles.DiaryFontLinkStandardDisplay} `}>{formattedDate}</span>
+                {is_owner && highlightPage && "..."}
+              </div>
+            </Link>
+          ) : (
+            <div className="d-flex align-items-center">
+              <span className={`${styles.DiaryFont}`}>{formattedDate}</span>
+              {is_owner && highlightPage && "..."}
+            </div>
+          )}
         </Media>
       </Card.Body>
 
-      <Link to={`/highlights/${id}`}>
-        <Card.Img src={image} alt={title} />
-      </Link>
+      {image && (
+        <Link to={`/highlights/${id}`}>
+          <Card.Img src={image} alt={title} />
+        </Link>
+      )}
 
       <Card.Body>
-        {location && (
+        {location && highlightPage && (
           <span className={`${styles.DiaryFont} text-muted`}>{location}</span>
         )}
         <div className="d-flex justify-content-between align-items-baseline mb-3">
-          {category && <span className={styles.Category}>#{category}</span>}
-          {tagged_user && (
+          {category && highlightPage && (
+            <span className={styles.Category}>#{category}</span>
+          )}
+          {tagged_user && highlightPage && (
             <Avatar src={tagged_user.profile_image} height={30} />
           )}
         </div>
 
-        <Card.Title className={`${styles.DiaryQuestions} mb-3`}>
-          What was the highlight of your day?
-        </Card.Title>
+        {highlightPage && (
+          <Card.Title className={`${styles.DiaryQuestions} mb-3`}>
+            What was the highlight of your day?
+          </Card.Title>
+        )}
 
         <p className={`${styles.DiaryFont} text-center `}>{title}</p>
 
-        {description && (
+        {description && highlightPage && (
           <Card.Text className="text-center">{description}</Card.Text>
         )}
-        <div className={`${styles.PostBar} d-flex justify-content-center align-items-center`}>
+        <div className={` d-flex justify-content-center align-items-center`}>
           {is_owner ? (
             <OverlayTrigger
               placement="top"
