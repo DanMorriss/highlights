@@ -98,7 +98,6 @@ function HighlightCreateForm() {
     }
   };
 
-
   // TEXT FIELDS
   const textFields = (
     <div className="text-center">
@@ -155,7 +154,9 @@ function HighlightCreateForm() {
           <option value="food-and-drink">Food and Drink</option>
           <option value="self-care">Self-Care</option>
           <option value="creativity">Creativity</option>
-          <option value="entertainment-and-music">Entertainment and Music</option>
+          <option value="entertainment-and-music">
+            Entertainment and Music
+          </option>
           <option value="travel-and-adventure">Travel and Adventure</option>
           <option value="work-and-education">Work and Education</option>
           <option value="funny">Funny</option>
@@ -200,50 +201,6 @@ function HighlightCreateForm() {
       </Button>
     </div>
   );
-
-  // const imageField = (
-  //   <Form.Group className="text-center">
-  //     {image ? (
-  //       <>
-  //         <figure>
-  //           <Image
-  //             className={`${appStyles.Image} shadow-lg`}
-  //             src={image}
-  //             rounded
-  //           />
-  //         </figure>
-  //         <div>
-  //           <Form.Label
-  //             className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-  //             htmlFor="image-upload"
-  //           >
-  //             Change the image
-  //           </Form.Label>
-  //         </div>
-  //         {errors.image?.map((message, idx) => (
-  //       <Alert variant="warning" key={idx}>
-  //         {message}
-  //       </Alert>
-  //     ))}
-  //       </>
-  //     ) : (
-  //       <Form.Label
-  //         className="d-flex justify-content-center"
-  //         htmlFor="image-upload"
-  //       >
-  //         <Asset src={Upload} message="Add an image" />
-  //       </Form.Label>
-  //     )}
-
-  //      <Form.File
-  //       id="image-upload"
-  //       accept="image/*"
-  //       onChange={handleChangeImage}
-  //       className="text-center shadow-lg"
-  //       ref={imageInput}
-  //     />
-  //   </Form.Group>
-  // );
 
   return (
     <>

@@ -22,3 +22,8 @@
   .HeartOutline:hover {
     color: #f85032;
   }
+
+  .UpdatedOn {
+    font-size: 1.4rem;
+    font-weight: 900;
+  }

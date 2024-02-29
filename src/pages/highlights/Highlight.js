@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../../styles/Highlight.module.css";
+import appStyles from "../../App.module.css";
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Avatar from "../../components/Avatar";
@@ -29,37 +30,54 @@ const Highlight = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
 
+  const date = new Date(created_on);
+  const options = {
+    weekday: "long",
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  };
+  const formattedDate = date.toLocaleDateString("en-US", options);
+
   const handleLike = async () => {
     try {
-      const {data} = await axiosRes.post("/likes/", {highlight: id})
+      const { data } = await axiosRes.post("/likes/", { highlight: id });
       setHighlight((prevHighlight) => ({
         ...prevHighlight,
         results: prevHighlight.results.map((highlight) => {
           return highlight.id === id
-          ? {...highlight, likes_count: highlight.likes_count + 1, like_id: data.id}
-          : highlight;
+            ? {
+                ...highlight,
+                likes_count: highlight.likes_count + 1,
+                like_id: data.id,
+              }
+            : highlight;
         }),
       }));
-    } catch(err) {
-      console.log(err)
+    } catch (err) {
+      console.log(err);
     }
-  }
+  };
 
   const handleUnlike = async () => {
     try {
-      const {data} = await axiosRes.delete(`/likes/${like_id}`)
+      const { data } = await axiosRes.delete(`/likes/${like_id}`);
       setHighlight((prevHighlight) => ({
         ...prevHighlight,
         results: prevHighlight.results.map((highlight) => {
           return highlight.id === id
-          ? {...highlight, likes_count: highlight.likes_count - 1, like_id: null}
-          : highlight;
+            ? {
+                ...highlight,
+                likes_count: highlight.likes_count - 1,
+                like_id: null,
+              }
+            : highlight;
         }),
-      }))
-    } catch(err) {
-      console.log(err)
+      }));
+    } catch (err) {
+      console.log(err);
     }
-  }
+  };
 
   return (
     <Card className={styles.Highlight}>
@@ -70,7 +88,9 @@ const Highlight = (props) => {
             {owner}
           </Link>
           <div className="d-flex align-items-center">
-            <span>{created_on}</span>
+            <span className={`${appStyles.Handwritten} ${styles.UpdatedOn}`}>
+              {formattedDate}
+            </span>
             {is_owner && highlightPage && "..."}
           </div>
         </Media>

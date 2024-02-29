@@ -146,4 +146,6 @@ React Router
 `Access to XMLHttpRequest at 'https://drf-highlights-319d26c2d75e.herokuapp.com/dj-rest-auth/user/' from origin 'https://pp5-highlights-a86c2f8f4016.herokuapp.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.`  
 Inside the CurrentUserContext.js file I was trying to return axiosReq(err.config) rather than axios(err.config). I also needed to add in Add CORS_ALLOWED_ORIGINS back into settings.py for DRF code.
 
-- The form for creating a highlight was throwing a 400 error when an image was not attached. I added the null=True field to the backend model but it still didn't work.
+- The form for creating a highlight was throwing a 400 error when an image was not attached. I added the null=True field to the backend model but it still didn't work. So I added a check in the HighlightCreateForm to check if an image is present before appending it to the data.
+
+- Trying to change the way the date is displaying on the highlights in the backend was causing the frontend form to throw a 400 error, so the logic was moved into the highlight.js file in the frontend.
