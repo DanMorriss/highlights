@@ -82,6 +82,8 @@ Interactivity
 
 General
 - Contact Form
+- Tag users in a highlight.
+- Add location.
 - As a site owner I want the site to be fully responsive across all screen sizes so it can be used on any device.
 - As a site owner I want the site to be easy to use so I can easily navigate and use it.
 - As a site owner I want the site to be secure so I can use it safely and securely.

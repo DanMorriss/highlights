@@ -19,10 +19,14 @@ function HighlightsPage({ message, filter = "" }) {
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
 
+  const [query, setQuery] = useState("");
+
   useEffect(() => {
     const fetchHighlights = async () => {
       try {
-        const { data } = await axiosReq.get(`/highlights/?${filter}`);
+        const { data } = await axiosReq.get(
+          `/highlights/?${filter}search=${query}`
+        );
         setHighlights(data);
         setHasLoaded(true);
       } catch (err) {
@@ -30,13 +34,29 @@ function HighlightsPage({ message, filter = "" }) {
       }
     };
     setHasLoaded(false);
-    fetchHighlights();
-  }, [filter, pathname]);
+    const timer = setTimeout(() => {
+      fetchHighlights();
+    }, 1000);
+    return () => {
+      clearTimeout(timer);
+    }
+  }, [filter, query, pathname]);
 
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles mobile</p>
+        <i className={`fas fa-search ${styles.SearchIcon}`}></i>
+        <Form className={styles.SearchBar} onSubmit={(e) => e.preventDefault()}>
+          <Form.Control
+            type="text"
+            placeholder="Search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className="mr-sm-2"
+          />
+        </Form>
+
         {hasLoaded ? (
           <>
             {highlights.results.length ? (
