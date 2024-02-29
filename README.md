@@ -149,3 +149,5 @@ Inside the CurrentUserContext.js file I was trying to return axiosReq(err.config
 - The form for creating a highlight was throwing a 400 error when an image was not attached. I added the null=True field to the backend model but it still didn't work. So I added a check in the HighlightCreateForm to check if an image is present before appending it to the data.
 
 - Trying to change the way the date is displaying on the highlights in the backend was causing the frontend form to throw a 400 error, so the logic was moved into the highlight.js file in the frontend.
+
+- The like button was not working on the feed and discover pages and the liked page was not loading. 
