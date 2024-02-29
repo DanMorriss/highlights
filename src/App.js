@@ -55,8 +55,8 @@ function App() {
             path="/liked"
             render={() => (
               <HighlightsPage
-                message="No results found, try changing your search or like a post"
-                filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_on&`}
+                message="No results found. Adjust the search keyword or like a post."
+                filter={`like__owner__profile=${profile_id}&ordering=-likes__created_on&`}
               />
             )}
           />
