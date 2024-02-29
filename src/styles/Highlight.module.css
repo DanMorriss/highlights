@@ -1,29 +1,47 @@
 .Highlight {
-    background-color: #ffffff;
-    border: 1px solid #dadadf;
-    border-radius: 2px;
-    margin-bottom: 16px;
-    text-align: center;
-  }
-  
-  .Highlight figure,
-  h5 {
-    margin: 0 0;
-  }
-  
-  .Heart {
-    color: #f85032;
-  }
-  
-  .Heart:hover {
-    color: #2142b2;
-  }
-  
-  .HeartOutline:hover {
-    color: #f85032;
-  }
+  background-color: #ffffff;
+  border: 1px solid #dadadf;
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
 
-  .UpdatedOn {
-    font-size: 1.4rem;
-    font-weight: 900;
-  }
+.Highlight figure,
+h5 {
+  margin: 0 0;
+}
+
+.Heart {
+  color: #f85032;
+}
+
+.HeartOutline:hover {
+  color: #f85032;
+}
+
+.Comment {
+  color: #453a2c;
+}
+
+.Comment:hover {
+  color: #453a2c;
+}
+
+.DiaryFont {
+  font-family: "Homemade Apple", cursive;
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+.DiaryQuestions {
+  font-size: 1.2rem;
+  font-weight: 700;
+  align-items: start;
+}
+
+.Category {
+  border: 1px solid #cf8562;
+  background-color: #cdb990;
+  font-size: 1.2rem;
+  border-radius: 1rem;
+  padding: 0.2rem 0.9rem;
+}

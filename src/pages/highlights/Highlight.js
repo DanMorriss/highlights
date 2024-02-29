@@ -88,20 +88,37 @@ const Highlight = (props) => {
             {owner}
           </Link>
           <div className="d-flex align-items-center">
-            <span className={`${appStyles.Handwritten} ${styles.UpdatedOn}`}>
-              {formattedDate}
-            </span>
+            <span className={`${styles.DiaryFont}`}>{formattedDate}</span>
             {is_owner && highlightPage && "..."}
           </div>
         </Media>
       </Card.Body>
+
       <Link to={`/highlights/${id}`}>
         <Card.Img src={image} alt={title} />
       </Link>
+
       <Card.Body>
-        {title && <Card.Title className="text-center">{title}</Card.Title>}
-        {description && <Card.Text>{description}</Card.Text>}
-        <div className={styles.PostBar}>
+        {location && (
+          <span className={`${styles.DiaryFont} text-muted`}>{location}</span>
+        )}
+        <div className="d-flex justify-content-between align-items-baseline mb-3">
+          {category && <span className={styles.Category}>#{category}</span>}
+          {tagged_user && (
+            <Avatar src={tagged_user.profile_image} height={30} />
+          )}
+        </div>
+
+        <Card.Title className={`${styles.DiaryQuestions} mb-3`}>
+          What was the highlight of your day?
+        </Card.Title>
+
+        <p className={`${styles.DiaryFont} text-center `}>{title}</p>
+
+        {description && (
+          <Card.Text className="text-center">{description}</Card.Text>
+        )}
+        <div className={`${styles.PostBar} d-flex justify-content-center align-items-center`}>
           {is_owner ? (
             <OverlayTrigger
               placement="top"
@@ -126,7 +143,7 @@ const Highlight = (props) => {
             </OverlayTrigger>
           )}
           {likes_count}
-          <Link to={`/highlights/${id}`}>
+          <Link className={styles.Comment} to={`/highlights/${id}`}>
             <i className="far fa-comment" />
           </Link>
           {comments_count}
