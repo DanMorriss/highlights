@@ -104,8 +104,11 @@ const Highlight = (props) => {
           </Link>
 
           {!highlightPage ? (
-            <>
-              <Link to={`/highlights/${id}`}>
+            <div  className="d-flex align-items-center">
+              <Link
+                className="align-items-center justify-content-between"
+                to={`/highlights/${id}`}
+              >
                 <div className="d-flex align-items-center">
                   <span className={`${styles.DiaryFontLinkStandardDisplay} `}>
                     {formattedDate}
@@ -118,7 +121,7 @@ const Highlight = (props) => {
                   handleDelete={handleDelete}
                 />
               )}
-            </>
+            </div>
           ) : (
             <div className="d-flex align-items-center">
               <span className={`${styles.DiaryFont}`}>{formattedDate}</span>

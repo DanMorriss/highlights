@@ -10,6 +10,7 @@ import { useCurrentUser } from "./contexts/CurrentUserContext";
 import HighlightCreateForm from "./pages/highlights/HighlightCreateForm";
 import HighlightPage from "./pages/highlights/HighlightPage";
 import HighlightsPage from "./pages/highlights/HighlightsPage";
+import HighlightEditForm from "./pages/highlights/HighlightEditForm";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -27,6 +28,11 @@ function App() {
             exact
             path="/highlights/create"
             render={() => <HighlightCreateForm />}
+          />
+          <Route
+            exact
+            path="/highlights/:id/edit"
+            render={() => <HighlightEditForm />}
           />
           <Route
             exact

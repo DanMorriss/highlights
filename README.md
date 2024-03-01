@@ -159,3 +159,5 @@ Inside the CurrentUserContext.js file I was trying to return axiosReq(err.config
 - The like button was not displaying the like when clicked on the feel and discover pages but the changes was reaching the database. The page needed to be reloaded to show the like/unlike. There were typos in the Highlight.js handleLike and handleUnlike functions.
 
 - The liked page was showing any result with a like, not ones that are liked by the signed in user. In the backend the filter I had setup was for like__owner__profile and I had typed likes__owner__profile in the frontend. The filters need to match, so I fixed the typo.
+
+- The HighlightEditForm was not allowing me to add or change an image. 
