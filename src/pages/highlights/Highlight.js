@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "../../styles/Highlight.module.css";
-import appStyles from "../../App.module.css";
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Avatar from "../../components/Avatar";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
+import { MoreDropdown } from "../../components/MoreDropdown";
 
 const Highlight = (props) => {
   const {
@@ -30,6 +30,20 @@ const Highlight = (props) => {
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+  const history = useHistory();
+
+  const handleEdit = () => {
+    history.push(`/highlights/${id}/edit`);
+  };
+
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/highlights/${id}/`);
+      history.goBack();
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const date = new Date(created_on);
   const options = {
@@ -90,16 +104,30 @@ const Highlight = (props) => {
           </Link>
 
           {!highlightPage ? (
-            <Link to={`/highlights/${id}`}>
-              <div className="d-flex align-items-center">
-                <span className={`${styles.DiaryFontLinkStandardDisplay} `}>{formattedDate}</span>
-                {is_owner && highlightPage && "..."}
-              </div>
-            </Link>
+            <>
+              <Link to={`/highlights/${id}`}>
+                <div className="d-flex align-items-center">
+                  <span className={`${styles.DiaryFontLinkStandardDisplay} `}>
+                    {formattedDate}
+                  </span>
+                </div>
+              </Link>
+              {is_owner && (
+                <MoreDropdown
+                  handleEdit={handleEdit}
+                  handleDelete={handleDelete}
+                />
+              )}
+            </>
           ) : (
             <div className="d-flex align-items-center">
               <span className={`${styles.DiaryFont}`}>{formattedDate}</span>
-              {is_owner && highlightPage && "..."}
+              {is_owner && highlightPage && (
+                <MoreDropdown
+                  handleEdit={handleEdit}
+                  handleDelete={handleDelete}
+                />
+              )}
             </div>
           )}
         </Media>
