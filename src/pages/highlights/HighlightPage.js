@@ -57,12 +57,19 @@ const HighlightPage = () => {
             "Comments"
           ) : null}
           {comments.results.length ? (
-            comments.results.map(comment => (
-              <Comment key={comment.id} {...comment} />
+            comments.results.map((comment) => (
+              <Comment
+                key={comment.id}
+                {...comment}
+                setHighlight={setHighlight}
+                setComments={setComments}
+              />
             ))
           ) : currentUser ? (
             <span>No comments yet, be the first to comment!</span>
-          ) : <span>Log in to be the first to comment!</span>}
+          ) : (
+            <span>Log in to be the first to comment!</span>
+          )}
         </Container>
       </Col>
       <Col className="d-none d-lg-block p-0 p-lg-2" lg={4}>
