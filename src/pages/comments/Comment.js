@@ -4,7 +4,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { Media } from "react-bootstrap";
 import Avatar from "../../components/Avatar";
 
-const Comment = ({ profile_id, profile_image, owner, updated_at, content }) => {
+const Comment = ({ profile_id, profile_image, owner, updated_on, content }) => {
   return (
     <div>
       <hr />
@@ -14,7 +14,7 @@ const Comment = ({ profile_id, profile_image, owner, updated_at, content }) => {
         </Link>
         <Media.Body className="align-self-center ml-2">
           <span className={styles.Owner}>{owner}</span>
-          <span className={styles.Date}>{updated_at}</span>
+          <span className={styles.Date}>{updated_on}</span>
           <p>{content}</p>
         </Media.Body>
       </Media>
