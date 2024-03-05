@@ -49,7 +49,7 @@ const HighlightPage = () => {
             <CommentCreateForm
               profile_id={currentUser.profile_id}
               profileImage={profile_image}
-              post={id}
+              highlight={id}
               setHighlight={setHighlight}
               setComments={setComments}
             />
