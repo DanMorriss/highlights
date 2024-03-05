@@ -26,9 +26,7 @@ function HighlightEditForm() {
     title: "",
     description: "",
     category: "",
-    // tagged_user: "",
     image: "",
-    // location: "",
   });
   const { created_on, title, description, category, image } = highlightData;
 
@@ -47,15 +45,24 @@ function HighlightEditForm() {
 
   useEffect(() => {
     const handleMount = async () => {
-        try {
-            const { data } =await axiosReq.get(`/highlights/${id}/`);
-            const { created_on, title, description, category, image, is_owner} = data;
-            console.log(created_on)
+      try {
+        const { data } = await axiosReq.get(`/highlights/${id}/`);
+        const { created_on, title, description, category, image, is_owner } =
+          data;
+        console.log(created_on);
 
-            is_owner ? setHighlightData({ created_on, title, description, category, image}) : history.push("/");
-        } catch(err) {
-            console.log(err)
-        }
+        is_owner
+          ? setHighlightData({
+              created_on,
+              title,
+              description,
+              category,
+              image,
+            })
+          : history.push("/");
+      } catch (err) {
+        console.log(err);
+      }
     };
 
     handleMount();
@@ -145,7 +152,6 @@ function HighlightEditForm() {
           name="category"
           as="select"
           defaultValue="Please select a category"
-          // value={category}
           onChange={handleChange}
         >
           <option value="select">Please select a category</option>
