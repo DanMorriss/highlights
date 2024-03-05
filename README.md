@@ -160,4 +160,6 @@ Inside the CurrentUserContext.js file I was trying to return axiosReq(err.config
 
 - The liked page was showing any result with a like, not ones that are liked by the signed in user. In the backend the filter I had setup was for like__owner__profile and I had typed likes__owner__profile in the frontend. The filters need to match, so I fixed the typo.
 
-- The HighlightEditForm was not allowing me to add or change an image. 
+- The HighlightEditForm was not allowing me to add or change an image. Access to XMLHttpRequest at 'https://drf-highlights-319d26c2d75e.herokuapp.com/highlights/25' from origin 'https://3000-danmorriss-highlights-4j7i000g906.ws-eu108.gitpod.io' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. The title was not being sent wth the picture change. Then a 404 error was being thrown.
+
+- Posting a comment was throwing a 400 error.

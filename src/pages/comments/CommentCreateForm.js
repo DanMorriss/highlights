@@ -19,7 +19,7 @@ function CommentCreateForm(props) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      // this line is causing the issue
+      console.log(content)
       const { data } = await axiosRes.post("/comments/", {
         content,
         highlight,

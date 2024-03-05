@@ -9,6 +9,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import Highlight from "./Highlight";
 import CommentCreateForm from "../comments/CommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import Comment from "../comments/Comment";
 
 const HighlightPage = () => {
   const { id } = useParams();
@@ -20,11 +21,12 @@ const HighlightPage = () => {
   useEffect(() => {
     const handleMount = async () => {
       try {
-        const [{ data: highlight }] = await Promise.all([
+        const [{ data: highlight }, { data: comments }] = await Promise.all([
           axiosReq.get(`/highlights/${id}`),
+          axiosReq.get(`/comments/?highlight=${id}`),
         ]);
         setHighlight({ results: [highlight] });
-        console.log(highlight);
+        setComments(comments);
       } catch (err) {
         console.log(err);
       }
@@ -54,6 +56,13 @@ const HighlightPage = () => {
           ) : comments.results.length ? (
             "Comments"
           ) : null}
+          {comments.results.length ? (
+            comments.results.map(comment => (
+              <Comment key={comment.id} {...comment} />
+            ))
+          ) : currentUser ? (
+            <span>No comments yet, be the first to comment!</span>
+          ) : <span>Log in to be the first to comment!</span>}
         </Container>
       </Col>
       <Col className="d-none d-lg-block p-0 p-lg-2" lg={4}>
