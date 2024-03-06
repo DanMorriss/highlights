@@ -165,3 +165,5 @@ Inside the CurrentUserContext.js file I was trying to return axiosReq(err.config
 - Posting a comment was throwing a 400 error. I had named the highlight prop in the parent component post so the highlight field was showing up as empty.
 
 - The date was not showing up on the comments. I had named the prop wrong (again). As I had made a similar mistake previously it was easy to spot and fix.
+
+- The like button was only showing a new like on a page refresh. I had named the method setHighlights instead of setHighlight (as I did in the parent element), renaming the method fixed it.
