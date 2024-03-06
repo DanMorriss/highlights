@@ -49,9 +49,6 @@ function HighlightEditForm() {
         const { data } = await axiosReq.get(`/highlights/${id}/`);
         const { created_on, title, description, category, image, is_owner } =
           data;
-        console.log(created_on);
-        console.log(title);
-
         is_owner
           ? setHighlightData({
               created_on,
@@ -96,11 +93,9 @@ function HighlightEditForm() {
     if (imageInput.current.files[0]) {
       formData.append("image", imageInput.current.files[0]);
     }
-    console.log(formData.title)
-    console.log(formData.description)
 
     try {
-      await axiosReq.put(`/highlights/${id}`, formData);
+      await axiosReq.put(`/highlights/${id}/`, formData);
       history.push(`/highlights/${id}`);
     } catch (err) {
       console.log(err);
