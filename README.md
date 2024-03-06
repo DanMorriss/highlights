@@ -76,6 +76,7 @@ Profile pages
 Interactivity
 - Like/un-like a Highlight
 - Comment on a Highlight
+- View comments
 - Edit a Comment
 - Delete a Comment
 - Follow/un-follow a User
