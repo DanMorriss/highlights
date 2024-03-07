@@ -19,28 +19,38 @@ import {
   useSetProfileData,
 } from "../../contexts/ProfileDataContext";
 import { Button, Image } from "react-bootstrap";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
+import Highlight from "../highlights/Highlight";
+import NoResults from "../../assets/no-results.png";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
+  const [profileHighlights, setProfileHighlights] = useState({ results: [] });
+
   const currentUser = useCurrentUser();
   const { id } = useParams();
+
   const setProfileData = useSetProfileData();
   const { pageProfile } = useProfileData();
+
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
 
-  console.log(profile);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [{ data: pageProfile }] = await Promise.all([
-          axiosReq.get(`/profiles/${id}/`),
-        ]);
+        const [{ data: pageProfile }, { data: profileHighlights }] =
+          await Promise.all([
+            axiosReq.get(`/profiles/${id}/`),
+            axiosReq.get(`/highlights/?owner__profile=${id}`),
+          ]);
         setProfileData((prevState) => ({
           ...prevState,
           pageProfile: { results: [pageProfile] },
         }));
+        setProfileHighlights(profileHighlights);
         setHasLoaded(true);
       } catch (err) {
         console.log(err);
@@ -97,7 +107,7 @@ function ProfilePage() {
               </Button>
             ))}
         </Col>
-        {profile?.content && (<Col className="p-3">{profile?.content}</Col>)}
+        {profile?.content && <Col className="p-3">{profile?.content}</Col>}
       </Row>
     </>
   );
@@ -105,8 +115,27 @@ function ProfilePage() {
   const mainProfileHighlights = (
     <>
       <hr />
-      <p className="text-center">Profile owner' highlights</p>
+      <p className="text-center">{profile?.owner}'s highlights</p>
       <hr />
+
+      {/* Check if there are any highlights and show them or else show an Asset */}
+      {profileHighlights.results.length ? (
+        <InfiniteScroll
+          children={profileHighlights.results.map((highlight) => (
+            <Highlight
+              key={highlight.id}
+              {...highlight}
+              setProfileHighlights={setProfileHighlights}
+            />
+          ))}
+          dataLength={profileHighlights.results.length}
+          loader={<Asset spinner />}
+          hasMore={!!profileHighlights.next}
+          next={() => fetchMoreData(profileHighlights, setProfileHighlights)}
+        />
+      ) : (
+        <Asset src={NoResults} message={`No results found, ${profile?.owner} hasn't posted yet.`} />
+      )}
     </>
   );
 
