@@ -31,19 +31,19 @@ const Profile = (props) => {
           !is_owner &&
           (following_id ? (
             <Button
-              className={styles.UnFollowBtn}
+              className={btnStyles.UnFollowBtn}
               onClick={() => console.log("unfollow")}
               aria-label="Unfollow user"
             >
-              <i class={`fa-solid fa-user-minus ${styles.Icon}`}></i>
+              <i className={`fa-solid fa-user-minus ${btnStyles.Icon}`}></i>
             </Button>
           ) : (
             <Button
-              className={styles.FollowBtn}
+              className={btnStyles.FollowBtn}
               onClick={() => console.log("follow")}
               aria-label="Follow user"
             >
-              <i class={`fa-solid fa-user-plus ${styles.Icon}`}></i>
+              <i className={`fa-solid fa-user-plus ${btnStyles.Icon}`}></i>
             </Button>
           ))}
       </div>
