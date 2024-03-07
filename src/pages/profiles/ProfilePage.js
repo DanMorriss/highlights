@@ -31,7 +31,7 @@ function ProfilePage() {
   const currentUser = useCurrentUser();
   const { id } = useParams();
 
-  const setProfileData = useSetProfileData();
+  const {setProfileData, handleFollow } = useSetProfileData();
   const { pageProfile } = useProfileData();
 
   const [profile] = pageProfile.results;
@@ -100,7 +100,7 @@ function ProfilePage() {
             ) : (
               <Button
                 className={btnStyles.FollowBtn}
-                onClick={() => console.log("follow")}
+                onClick={() => handleFollow(profile)}
                 aria-label="Follow user"
               >
                 <i className={`fa-solid fa-user-plus ${btnStyles.Icon}`}></i>
