@@ -16,8 +16,10 @@ import { Alert, Image } from "react-bootstrap";
 import { useHistory } from "react-router";
 
 import { axiosReq } from "../../api/axiosDefaults";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function HighlightCreateForm() {
+  useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 
   const [highlightData, setHighlightData] = useState({
