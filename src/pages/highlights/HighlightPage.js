@@ -13,6 +13,7 @@ import Comment from "../comments/Comment";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
+import PopularProfiles from "../profiles/PopularProfiles";
 
 const HighlightPage = () => {
   const { id } = useParams();
@@ -41,7 +42,7 @@ const HighlightPage = () => {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <p>Popular profiles for Mobile</p>
+        <PopularProfiles mobile />
         <Highlight
           {...highlight.results[0]}
           setHighlight={setHighlight}
@@ -82,7 +83,7 @@ const HighlightPage = () => {
         </Container>
       </Col>
       <Col className="d-none d-lg-block p-0 p-lg-2" lg={4}>
-        <p>Popular profiles for Desktop</p>
+        <PopularProfiles />
       </Col>
     </Row>
   );

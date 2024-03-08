@@ -14,7 +14,7 @@ const Profile = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
 
-  const {handleFollow} = useSetProfileData();
+  const {handleFollow, handleUnfollow} = useSetProfileData();
 
   return (
     <div
@@ -35,7 +35,7 @@ const Profile = (props) => {
           (following_id ? (
             <Button
               className={btnStyles.UnFollowBtn}
-              onClick={() => console.log("unfollow")}
+              onClick={() => handleUnfollow(profile)}
               aria-label="Unfollow user"
             >
               <i className={`fa-solid fa-user-minus ${btnStyles.Icon}`}></i>
