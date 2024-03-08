@@ -12,6 +12,9 @@ import HighlightPage from "./pages/highlights/HighlightPage";
 import HighlightsPage from "./pages/highlights/HighlightsPage";
 import HighlightEditForm from "./pages/highlights/HighlightEditForm";
 import ProfilePage from "./pages/profiles/ProfilePage";
+import UsernameForm from "./pages/profiles/UsernameForm";
+import UserPasswordForm from "./pages/profiles/UserPasswordForm";
+import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -68,6 +71,21 @@ function App() {
             )}
           />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
+          <Route
+            exact
+            path="/profiles/:id/edit/username"
+            render={() => <UsernameForm />}
+          />
+          <Route
+            exact
+            path="/profiles/:id/edit/password"
+            render={() => <UserPasswordForm />}
+          />
+          <Route
+            exact
+            path="/profiles/:id/edit"
+            render={() => <ProfileEditForm />}
+          />
           <Route render={() => <h1>Page not found</h1>} />
         </Switch>
       </Container>

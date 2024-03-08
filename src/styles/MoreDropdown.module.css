@@ -21,3 +21,16 @@
     right: 0;
     z-index: 99;
 }
+
+.Icon {
+    color: #CF8562;
+}
+
+.DropdownItemWithText:hover {
+    background-color: #FFF5E6;
+}
+
+.DropdownItemWithText:hover i {
+    color: #453a2c;
+    transform: scale(1.2);
+}
