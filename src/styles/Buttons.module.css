@@ -31,15 +31,15 @@
     border-radius: 0.7rem;
     padding: 0;
     border: none;
-    background-color: #21b23c;
+    background-color: #46c55e;
     color: #ffffff;
   }
   
   .FollowBtn:hover {
     cursor: pointer;
-    border: 1px solid #21b23c;
+    border: 1px solid #46c55e;
     background-color: #ffffff;
-    color: #21b23c;
+    color: #46c55e;
   }
   
   .Icon {
@@ -57,13 +57,13 @@
     border-radius: 0.7rem;
     padding: 0;
     border: none;
-    background-color: #cdb990;
+    background-color: #CF8562;
     color: #ffffff;
   }
   
   .UnFollowBtn:hover {
     cursor: pointer;
-    border: 1px solid #f85032;
+    border: 1px solid #CF8562;
     background-color: #ffffff;
-    color: #f85032;
+    color: #CF8562;
   }
