@@ -17,6 +17,7 @@ import {
 
 import btnStyles from "../../styles/Buttons.module.css";
 import appStyles from "../../App.module.css";
+import Location from "../../components/Location";
 
 const ProfileEditForm = () => {
   const currentUser = useCurrentUser();
@@ -101,6 +102,7 @@ const ProfileEditForm = () => {
           {message}
         </Alert>
       ))}
+      <Location />
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}

@@ -52,30 +52,6 @@ function HighlightCreateForm() {
     }
   };
 
-  // const getLocation = () => {
-  //   const currentLocation = navigator.geolocation.getCurrentPosition(
-  //     (position) => {
-  //       const latitude = position.coords.latitude;
-  //       const longitude = position.coords.longitude;
-  //       const locationApi = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
-  //       fetch(locationApi).then(response =>response.json()).then(data => {
-  //         setHighlightData({
-  //           ...highlightData,
-  //           location: data.city + ", " + data.countryCode
-  //         })
-  //       })
-  //     },
-  //     (error) => {
-  //       console.log(error);
-  //     }
-  //   )
-  // };
-
-  // const locationGrabber = (
-  //   <div className={`${btnStyles.Button} ${btnStyles.Blue} btn`} onClick={getLocation}>
-  //     Add Current Location
-  //   </div>
-  // );
 
   const handleSubmit = async (e) => {
     e.preventDefault();

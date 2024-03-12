@@ -10,7 +10,11 @@ const Thanks = () => {
     <Container className="text-center pt-3">
       <h1 className={appStyles.Handwritten}>Thanks for getting in touch</h1>
       <p className="pt-3">
-        Why not have a look at your <Link to="/feed">feed</Link>
+        We appreciate feedback, it helps us make the site better!
+      </p>
+      <p>
+        Why not have a look at your <Link to="/feed">feed</Link> and see what
+        other people have been posting.
       </p>
     </Container>
   );
