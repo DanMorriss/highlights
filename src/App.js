@@ -55,7 +55,7 @@ function App() {
             path="/feed"
             render={() => (
               <HighlightsPage
-                message="No results found, try changing your search or follow a user"
+                message="No results found, try changing your search or following a user"
                 filter={`owner__followed__owner__profile=${profile_id}&`}
               />
             )}
