@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import btnStyles from "../styles/Buttons.module.css";
+import { axiosReq } from "../api/axiosDefaults";
+import Asset from "./Asset";
 
 const Location = () => {
+  const [errors, setErrors] = useState({});
   const [locationData, setLocationData] = useState({
     latitude: "",
     longitude: "",
     name: "",
   });
+  const [locationLoading, setLocationLoading] = useState(false);
 
   const getLocation = () => {
+    setLocationLoading(true);
     const currentLocation = navigator.geolocation.getCurrentPosition(
       (position) => {
         const lat = position.coords.latitude;
@@ -23,12 +28,22 @@ const Location = () => {
               name: data.city + ", " + data.countryCode,
             });
             console.log(locationData);
+            setLocationLoading(false);
           });
       },
       (error) => {
         console.log(error);
       }
     );
+  };
+
+  const handleSubmit = async (e) => {
+    try {
+      const { data } = await axiosReq.post("/location/", locationData);
+    } catch (err) {
+      console.log(err);
+      setErrors(err.response?.data);
+    }
   };
 
   return (
@@ -40,6 +55,9 @@ const Location = () => {
         Add Current Location
       </div>
       <div>
+        {locationLoading && (
+          <Asset spinner />
+        )}
         <p>{locationData.name}</p>
       </div>
     </>
