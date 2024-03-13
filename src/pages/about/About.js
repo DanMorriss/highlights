@@ -6,6 +6,11 @@ import appStyles from "../../App.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 
+/**
+ * Returns the About component with user-specific content and conditional rendering based on the currentUser state.
+ *
+ * @returns {JSX.Element} The About component JSX
+ */
 const About = () => {
   const currentUser = useCurrentUser();
   return (
@@ -25,10 +30,17 @@ const About = () => {
             improve well-being. It's the simplest, science-backed way to a
             happier you.
           </Card.Text>
+
+          {/*
+           * Show send us a message button if user is logged in
+           * Otherwise, show sign up and sign in buttons
+           */}
           {currentUser ? (
-            <Link to="/contact-us"><Button className={btnStyles.Button} variant="primary">
-              Send us a Message
-            </Button></Link>
+            <Link to="/contact-us">
+              <Button className={btnStyles.Button} variant="primary">
+                Send us a Message
+              </Button>
+            </Link>
           ) : (
             <>
               <Link to="/signup">
