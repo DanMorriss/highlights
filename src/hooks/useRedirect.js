@@ -6,6 +6,11 @@ export const useRedirect = (userAuthStatus) => {
   const history = useHistory();
 
   useEffect(() => {
+    /**
+     * This function handles the mounting of the component and performs a series of asynchronous tasks,
+     * including refreshing the authentication token using axios.
+     * It then checks the user's authentication status and redirects the user to different pages based on their status.
+     */
     const handleMount = async () => {
       try {
         await axios.post('/dj-rest-auth/token/refresh/');
