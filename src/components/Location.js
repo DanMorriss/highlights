@@ -29,6 +29,7 @@ const Location = () => {
             });
             console.log(locationData);
             setLocationLoading(false);
+            // handleSubmit(locationData);
           });
       },
       (error) => {
@@ -39,7 +40,7 @@ const Location = () => {
 
   const handleSubmit = async (e) => {
     try {
-      const { data } = await axiosReq.post("/location/", locationData);
+      const { data } = await axiosReq.post("/locations/", locationData);
     } catch (err) {
       console.log(err);
       setErrors(err.response?.data);
@@ -58,7 +59,10 @@ const Location = () => {
         {locationLoading && (
           <Asset spinner />
         )}
-        <p>{locationData.name}</p>
+        {locationData.name && (
+          <p>{locationData.name}</p>
+        )}
+        
       </div>
     </>
   );

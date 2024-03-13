@@ -17,6 +17,14 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
   />
 ));
 
+
+/**
+ * Component for rendering a dropdown with more options.
+ *
+ * @param {function} handleEdit - Function to handle the edit action
+ * @param {function} handleDelete - Function to handle the delete action
+ * @return {JSX.Element} Dropdown component with more options
+ */
 export const MoreDropdown = ({handleEdit, handleDelete}) => {
   return (
     <Dropdown className="ml-auto" drop="left">
@@ -37,6 +45,12 @@ export const MoreDropdown = ({handleEdit, handleDelete}) => {
   );
 };
 
+/**
+ * Renders a dropdown menu for editing profile options.
+ *
+ * @param {object} id - The unique identifier of the profile
+ * @return {JSX.Element} The dropdown menu component
+ */
 export function ProfileEditDropdown({ id }) {
   const history = useHistory();
   return (

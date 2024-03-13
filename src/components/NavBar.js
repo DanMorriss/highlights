@@ -11,6 +11,11 @@ import Avatar from "./Avatar";
 import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 
+/**
+ * Generates the navigation bar component with dynamic links based on user authentication status.
+ *
+ * @return {JSX.Element} The navigation bar component
+ */
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
@@ -35,6 +40,7 @@ const NavBar = () => {
     </NavLink>
   );
 
+  {/* Logged out links: Sign in, Sign up */}
   const loggedOutLinks = (
     <>
       <NavLink
@@ -54,6 +60,7 @@ const NavBar = () => {
     </>
   );
 
+  {/* Logged in links: Feed, Liked, Profile, Sign out */}
   const loggedInLinks = (
     <>
       <NavLink
@@ -103,6 +110,7 @@ const NavBar = () => {
         </Navbar.Brand>
       </NavLink>
 
+      {/* Add highlight icon if logged in */}
       {currentUser && addHighlightIcon}
 
       <Navbar.Toggle
@@ -121,6 +129,7 @@ const NavBar = () => {
             <i className="fa-solid fa-magnifying-glass"></i>Discover
           </NavLink>
 
+          {/* Add logged in links for logged in users and logged out links for logged out users */}
           {currentUser ? loggedInLinks : loggedOutLinks}
         </Nav>
       </Navbar.Collapse>
