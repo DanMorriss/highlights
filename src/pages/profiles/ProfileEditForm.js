@@ -19,6 +19,11 @@ import btnStyles from "../../styles/Buttons.module.css";
 import appStyles from "../../App.module.css";
 import Location from "../../components/Location";
 
+/**
+ * Generates a profile edit form with user data fetched from the server.
+ *
+ * @return {JSX.Element} The profile edit form component
+ */
 const ProfileEditForm = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
@@ -36,6 +41,11 @@ const ProfileEditForm = () => {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
+    /**
+     * Asynchronously handles the mounting of the component if the user is the owner of the profile.
+     * Fetches the profile data from the server and sets it in the state: name, bio, and image.
+     * If the user is not the owner, redirects the user to the homepage.
+     */
     const handleMount = async () => {
       if (currentUser?.profile_id?.toString() === id) {
         try {
@@ -54,6 +64,11 @@ const ProfileEditForm = () => {
     handleMount();
   }, [currentUser, history, id]);
 
+  /**
+   * A function that handles changes in the profile data.
+   *
+   * @param {event} event - the event triggering the change
+   */
   const handleChange = (event) => {
     setProfileData({
       ...profileData,
@@ -61,6 +76,12 @@ const ProfileEditForm = () => {
     });
   };
 
+  /**
+   * Handles the form submission asynchronously.
+   * Then sends the user back to their profile page.
+   *
+   * @param {Object} event - the event object
+   */
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -84,8 +105,10 @@ const ProfileEditForm = () => {
     }
   };
 
+  // TEXT FIELDS
   const textFields = (
     <>
+      {/* Bio */}
       <Form.Group>
         <Form.Label>Bio</Form.Label>
         <Form.Control
@@ -96,19 +119,24 @@ const ProfileEditForm = () => {
           rows={7}
         />
       </Form.Group>
-
       {errors?.bio?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
+
+      {/* Location */}
       <Location />
+
+      {/* Cancel Button */}
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}
       >
         cancel
       </Button>
+
+      {/* Save Button */}
       <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
         save
       </Button>
@@ -121,6 +149,7 @@ const ProfileEditForm = () => {
         <Col className="py-2 p-0 p-md-2 text-center" md={7} lg={6}>
           <Container className={appStyles.Content}>
             <Form.Group>
+              {/* Display image if there is one */}
               {image && (
                 <figure>
                   <Image src={image} fluid />
@@ -131,6 +160,8 @@ const ProfileEditForm = () => {
                   {message}
                 </Alert>
               ))}
+
+              {/* Image Upload */}
               <div>
                 <Form.Label
                   className={`${btnStyles.Button} ${btnStyles.Blue} btn my-auto`}
@@ -139,6 +170,8 @@ const ProfileEditForm = () => {
                   Change the image
                 </Form.Label>
               </div>
+
+              {/* Image Upload hidden with CSS, above Form.Label is used instead */}
               <Form.File
                 id="image-upload"
                 ref={imageFile}
@@ -153,9 +186,12 @@ const ProfileEditForm = () => {
                 }}
               />
             </Form.Group>
+
+            {/* Text Fields */}
             <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>
+
         <Col md={5} lg={6} className="d-none d-md-block p-0 p-md-2 text-center">
           <Container className={appStyles.Content}>{textFields}</Container>
         </Col>

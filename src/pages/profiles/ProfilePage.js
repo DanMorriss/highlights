@@ -25,6 +25,11 @@ import Highlight from "../highlights/Highlight";
 import NoResults from "../../assets/no-results.png";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
 
+/**
+ * ProfilePage component to display the user's profile and highlights.
+ *
+ * @return {JSX.Element} The JSX for the ProfilePage component
+ */
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [profileHighlights, setProfileHighlights] = useState({ results: [] });
@@ -39,6 +44,11 @@ function ProfilePage() {
   const is_owner = currentUser?.username === profile?.owner;
 
   useEffect(() => {
+    /**
+     * Fetches data using axios for a specific profile and highlights,
+     * and sets the retrieved information in the component state.
+     * If an error occurs, logs the error.
+     */
     const fetchData = async () => {
       try {
         const [{ data: pageProfile }, { data: profileHighlights }] =
@@ -59,13 +69,12 @@ function ProfilePage() {
     fetchData();
   }, [id, setProfileData]);
 
-  // console.log(profile.content)
-
   const mainProfile = (
     <>
       {/* Show the dropdown component to the profile owner */}
       {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
       <Row noGutters className="px-3 text-center">
+        {/* Profile Avatar */}
         <Col lg={3} className="text-lg-left">
           <Image
             className={styles.ProfileImage}
@@ -73,24 +82,32 @@ function ProfilePage() {
             src={profile?.image}
           />
         </Col>
+
+        {/* Profile name and stats */}
         <Col lg={6}>
           <h3 className="m-2">{profile?.owner}</h3>
           <Row className="justify-content-center no-gutters">
+            {/* Posts */}
             <Col xs={3} className="my-2">
               <div>{profile?.posts_count}</div>
               <div>posts</div>
             </Col>
+            {/* Followers */}
             <Col xs={3} className="my-2">
               <div>{profile?.followers_count}</div>
               <div>followers</div>
             </Col>
+            {/* Following */}
             <Col xs={3} className="my-2">
               <div>{profile?.following_count}</div>
               <div>following</div>
             </Col>
           </Row>
         </Col>
+
         <Col lg={3} className="text-lg-right">
+          {/* Follow/unfollow button */}
+          {/* If the user is logged and and not the owner, display the un-follow button */}
           {currentUser &&
             !is_owner &&
             (profile?.following_id ? (
@@ -101,6 +118,7 @@ function ProfilePage() {
               >
                 <i className={`fa-solid fa-user-minus ${btnStyles.Icon}`}></i>
               </Button>
+            // If the user is not following the profile, display the follow button
             ) : (
               <Button
                 className={btnStyles.FollowBtn}
@@ -111,6 +129,7 @@ function ProfilePage() {
               </Button>
             ))}
         </Col>
+        {/* Profile content and bio */}
         {profile?.content && <Col className="p-3">{profile?.content}</Col>}
         {profile?.bio && <Col className="p-3">{profile?.bio}</Col>}
       </Row>
@@ -152,6 +171,7 @@ function ProfilePage() {
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
         <Container className={appStyles.Content}>
+          {/* Check if there are any profile data and show it or else show an Asset */}
           {hasLoaded ? (
             <>
               {mainProfile}
