@@ -17,7 +17,6 @@ import {
 
 import btnStyles from "../../styles/Buttons.module.css";
 import appStyles from "../../App.module.css";
-import Location from "../../components/Location";
 
 /**
  * Generates a profile edit form with user data fetched from the server.
@@ -35,9 +34,8 @@ const ProfileEditForm = () => {
     name: "",
     bio: "",
     image: "",
-    location: "",
   });
-  const { name, bio, image, location } = profileData;
+  const { name, bio, image } = profileData;
 
   const [errors, setErrors] = useState({});
 
@@ -51,8 +49,8 @@ const ProfileEditForm = () => {
       if (currentUser?.profile_id?.toString() === id) {
         try {
           const { data } = await axiosReq.get(`/profiles/${id}/`);
-          const { name, bio, image, location } = data;
-          setProfileData({ name, bio, image, location });
+          const { name, bio, image } = data;
+          setProfileData({ name, bio, image });
         } catch (err) {
           console.log(err);
           history.push("/");
@@ -88,7 +86,6 @@ const ProfileEditForm = () => {
     const formData = new FormData();
     formData.append("name", name);
     formData.append("bio", bio);
-    formData.append("location", location);
 
     if (imageFile?.current?.files[0]) {
       formData.append("image", imageFile?.current?.files[0]);
@@ -105,18 +102,6 @@ const ProfileEditForm = () => {
       console.log(err);
       setErrors(err.response?.data);
     }
-  };
-
-  // This isn't working properly! 
-  //The console logs the location data in the locationData.name
-  // but not in the profileData
-  const updateLocation = (locationData) => {
-    setProfileData((prevData) => ({
-      ...prevData,
-      location: locationData.name,
-    }));
-    console.log(locationData.name);
-    console.log(profileData);
   };
 
   // TEXT FIELDS
@@ -138,9 +123,6 @@ const ProfileEditForm = () => {
           {message}
         </Alert>
       ))}
-
-      {/* Location */}
-      <Location updateLocation={updateLocation} />
 
       {/* Cancel Button */}
       <Button

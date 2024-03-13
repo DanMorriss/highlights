@@ -4,7 +4,7 @@ import { axiosReq } from "../api/axiosDefaults";
 import Asset from "./Asset";
 import { Button, Form } from "react-bootstrap";
 
-const Location = ({ updateLocation }) => {
+const Location = () => {
   const [errors, setErrors] = useState({});
   const [locationData, setLocationData] = useState({
     latitude: "",
@@ -53,6 +53,20 @@ const Location = ({ updateLocation }) => {
     }
   }, [locationFetched]);
 
+
+    // This isn't working properly! 
+  //The console logs the location data in the locationData.name
+  // but not in the profileData
+  // It came from the edit profile page, may not need it.
+  // const updateLocation = (locationData) => {
+  //   setProfileData((prevData) => ({
+  //     ...prevData,
+  //     location: locationData.name,
+  //   }));
+  //   console.log(locationData.name);
+  //   console.log(profileData);
+  // };
+
   /**
    * Handle form submission asynchronously.
    *
@@ -61,7 +75,7 @@ const Location = ({ updateLocation }) => {
   const handleSubmit = async (e) => {
     try {
       const { data } = await axiosReq.post("/locations/", locationData);
-      updateLocation(locationData);
+      // updateLocation(locationData);
     } catch (err) {
       console.log(err);
       setErrors(err.response?.data);

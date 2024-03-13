@@ -17,6 +17,7 @@ import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import Contact from "./pages/contact/Contact";
 import Thanks from "./pages/contact/Thanks";
+import Location from "./components/Location";
 
 /**
  * Renders the main application component, including the navigation bar and various routes for different pages.
@@ -92,6 +93,11 @@ function App() {
             exact
             path="/profiles/:id/edit"
             render={() => <ProfileEditForm />}
+          />
+          <Route
+            exact
+            path="/profiles/:id/edit/location"
+            render={() => <Location />}
           />
           <Route exact path="/contact-us" render={() => <Contact />} />
           <Route exact path="/contact-us/thanks" render={() => <Thanks />} />

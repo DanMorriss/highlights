@@ -17,7 +17,6 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
   />
 ));
 
-
 /**
  * Component for rendering a dropdown with more options.
  *
@@ -25,7 +24,7 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
  * @param {function} handleDelete - Function to handle the delete action
  * @return {JSX.Element} Dropdown component with more options
  */
-export const MoreDropdown = ({handleEdit, handleDelete}) => {
+export const MoreDropdown = ({ handleEdit, handleDelete }) => {
   return (
     <Dropdown className="ml-auto" drop="left">
       <Dropdown.Toggle as={ThreeDots} />
@@ -34,12 +33,16 @@ export const MoreDropdown = ({handleEdit, handleDelete}) => {
           className={styles.DropdownItem}
           onClick={handleEdit}
           aria-label="Edit highlight"
-        ><i className="fas fa-feather-pointed" /></Dropdown.Item>
+        >
+          <i className="fas fa-feather-pointed" />
+        </Dropdown.Item>
         <Dropdown.Item
           className={styles.DropdownItem}
           onClick={handleDelete}
           aria-label="Delete highlight"
-        ><i className="fas fa-trash" /></Dropdown.Item>
+        >
+          <i className="fas fa-trash" />
+        </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   );
@@ -79,6 +82,13 @@ export function ProfileEditDropdown({ id }) {
         >
           <i className={`${styles.Icon} fas fa-key`} />
           change password
+        </Dropdown.Item>
+        <Dropdown.Item
+          onClick={() => history.push(`/profiles/${id}/edit/location`)}
+          aria-label="add-location"
+          className={styles.DropdownItemWithText}
+        >
+          <i className={`${styles.Icon} fas fa-location-dot`} /> Add Location
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
