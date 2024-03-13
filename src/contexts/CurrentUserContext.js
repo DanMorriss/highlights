@@ -9,10 +9,20 @@ export const setCurrentUserContext = createContext();
 export const useCurrentUser = () => useContext(CurrentUserContext);
 export const useSetCurrentUser = () => useContext(setCurrentUserContext);
 
+/**
+ * Function to provide current user data to the child components and handle token refresh.
+ *
+ * @param {Object} children - The child components to provide current user data to.
+ * @return {JSX.Element} The context provider for current user data.
+ */
 export const CurrentUserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const history = useHistory();
 
+  /**
+   * A function that handles the mounting of the component,
+   * fetches and sets the current user data from the server.
+   */
   const handleMount = async () => {
     try {
       const { data } = await axiosRes.get("/dj-rest-auth/user/");
