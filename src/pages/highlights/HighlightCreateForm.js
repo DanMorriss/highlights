@@ -140,7 +140,6 @@ function HighlightCreateForm() {
           name="category"
           as="select"
           defaultValue="Please select a category"
-          // value={category}
           onChange={handleChange}
         >
           <option value="select">Please select a category</option>

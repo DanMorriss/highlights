@@ -18,6 +18,11 @@ import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
+/**
+ * Component for editing and updating a highlight entry.
+ *
+ * @return {JSX.Element} The HighlightEditForm component
+ */
 function HighlightEditForm() {
   const [errors, setErrors] = useState({});
 
@@ -44,6 +49,11 @@ function HighlightEditForm() {
   const { id } = useParams();
 
   useEffect(() => {
+    /**
+     * A function that handles the mounting process for the component.
+     * Fetches the data for the highlight and sets it in the state if the user is the owner.
+     * Otherwise, redirects the user to the homepage.
+     */
     const handleMount = async () => {
       try {
         const { data } = await axiosReq.get(`/highlights/${id}/`);
@@ -66,6 +76,11 @@ function HighlightEditForm() {
     handleMount();
   }, [id, history]);
 
+  /**
+   * Handles the change event and updates the highlight data.
+   *
+   * @param {Event} e - the event object
+   */
   const handleChange = (e) => {
     setHighlightData({
       ...highlightData,
@@ -73,6 +88,11 @@ function HighlightEditForm() {
     });
   };
 
+  /**
+   * Handle change image event and update highlight data.
+   *
+   * @param {Event} e - The event object
+   */
   const handleChangeImage = (e) => {
     if (e.target.files.length) {
       URL.revokeObjectURL(image);
@@ -83,6 +103,12 @@ function HighlightEditForm() {
     }
   };
 
+  /**
+   * Handles the form submission asynchronously.
+   *
+   * @param {object} e - the event object
+   * @return {Promise} a promise representing the result of the form submission
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -109,6 +135,7 @@ function HighlightEditForm() {
   const textFields = (
     <div className="text-center">
       <Form.Group controlId="title">
+        {/* Title */}
         <Form.Label>What was the highlight of your day?</Form.Label>
         <Form.Control
           className={styles.Input}
@@ -125,6 +152,7 @@ function HighlightEditForm() {
         </Alert>
       ))}
 
+      {/* Description */}
       <Form.Group controlId="description">
         <Form.Label>Description</Form.Label>
         <Form.Control
@@ -143,6 +171,7 @@ function HighlightEditForm() {
         </Alert>
       ))}
 
+      {/* Category */}
       <Form.Group controlId="category">
         <Form.Label>Category</Form.Label>
         <Form.Control
@@ -175,13 +204,14 @@ function HighlightEditForm() {
         </Alert>
       ))}
 
+      {/* Post button */}
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue} ${styles.FormButtons}`}
         type="submit"
       >
         Update
       </Button>
-
+      {/* Cancel button */}
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue} ${styles.FormButtons}`}
         onClick={() => history.goBack()}
@@ -198,6 +228,7 @@ function HighlightEditForm() {
       </h1>
       <Form onSubmit={handleSubmit}>
         <Row>
+          {/* Text fields for medium screens and up */}
           <Col md={6} sm={12} className="d-none d-md-block p-0 p-md-2">
             <Container className={appStyles.Content}>{textFields}</Container>
           </Col>
@@ -207,7 +238,9 @@ function HighlightEditForm() {
               className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
             >
               <div>
+                {/* Image upload */}
                 <Form.Group className="text-center">
+                  {/* Display image if there is one and give option to upload new */}
                   {image ? (
                     <>
                       <figure>
@@ -231,6 +264,7 @@ function HighlightEditForm() {
                         </Alert>
                       ))}
                     </>
+                  // If there is no image, display upload button
                   ) : (
                     <Form.Label
                       className="d-flex justify-content-center"
@@ -240,6 +274,7 @@ function HighlightEditForm() {
                     </Form.Label>
                   )}
 
+                  {/* Upload button hidden with CSS, custom button above is used instead */}
                   <Form.File
                     id="image-upload"
                     accept="image/*"
@@ -250,6 +285,7 @@ function HighlightEditForm() {
                 </Form.Group>
               </div>
 
+              {/* Display the text fields on small screens */}
               <div className="d-md-none">{textFields}</div>
             </Container>
           </Col>
