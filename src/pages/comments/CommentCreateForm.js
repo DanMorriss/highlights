@@ -8,14 +8,30 @@ import styles from "../../styles/CommentCreateEditForm.module.css";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 
+/**
+ * Component for creating comments.
+ *
+ * @param {object} props - The properties object containing highlight, setHighlight, setComments, profileImage, and profile_id.
+ * @return {JSX.Element} The comment create form component.
+ */
 function CommentCreateForm(props) {
   const { highlight, setHighlight, setComments, profileImage, profile_id } = props;
   const [content, setContent] = useState("");
 
+  /**
+   * A function to handle the change event.
+   *
+   * @param {event} event - the event object
+   */
   const handleChange = (event) => {
     setContent(event.target.value);
   };
 
+  /**
+   * A function that handles form submission asynchronously.
+   *
+   * @param {Event} event - the form submission event
+   */
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
