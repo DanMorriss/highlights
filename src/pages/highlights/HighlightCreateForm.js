@@ -18,6 +18,9 @@ import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
 
+/**
+ * Function to create a highlight form with text fields for title, description, and category, and an image upload option.
+ */
 function HighlightCreateForm() {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
@@ -35,6 +38,11 @@ function HighlightCreateForm() {
   const imageInput = useRef(null);
   const history = useHistory();
 
+  /**
+   * A function to handle change events.
+   *
+   * @param {Object} e - The event object
+   */
   const handleChange = (e) => {
     setHighlightData({
       ...highlightData,
@@ -42,6 +50,11 @@ function HighlightCreateForm() {
     });
   };
 
+  /**
+   * A function that handles image change event.
+   *
+   * @param {Event} e - the event object containing information about the image change
+   */
   const handleChangeImage = (e) => {
     if (e.target.files.length) {
       URL.revokeObjectURL(image);
@@ -53,6 +66,9 @@ function HighlightCreateForm() {
   };
 
 
+  /**
+   * Handles the form submission.
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -79,6 +95,7 @@ function HighlightCreateForm() {
   // TEXT FIELDS
   const textFields = (
     <div className="text-center">
+      {/* Title */}
       <Form.Group controlId="title">
         <Form.Label>What was the highlight of your day?</Form.Label>
         <Form.Control
@@ -96,6 +113,7 @@ function HighlightCreateForm() {
         </Alert>
       ))}
 
+      {/* Description */}
       <Form.Group controlId="description">
         <Form.Label>Description</Form.Label>
         <Form.Control
@@ -114,6 +132,7 @@ function HighlightCreateForm() {
         </Alert>
       ))}
 
+      {/* Category */}
       <Form.Group controlId="category">
         <Form.Label>Category</Form.Label>
         <Form.Control
@@ -147,6 +166,7 @@ function HighlightCreateForm() {
         </Alert>
       ))}
 
+      {/* Tagged User */}
       {/* <Form.Group controlId="tagged_user">
         <Form.Label>Tag someone</Form.Label>
         <Form.Control
@@ -164,13 +184,14 @@ function HighlightCreateForm() {
         </Alert>
       ))} */}
 
+      {/* Post button */}
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue} ${styles.FormButtons}`}
         type="submit"
       >
         Post
       </Button>
-
+      {/* Cancel button */}
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue} ${styles.FormButtons}`}
         onClick={() => history.goBack()}
@@ -187,6 +208,7 @@ function HighlightCreateForm() {
       </h1>
       <Form onSubmit={handleSubmit}>
         <Row>
+          {/* Text fields for medium screens and up */}
           <Col md={6} sm={12} className="d-none d-md-block p-0 p-md-2">
             <Container className={appStyles.Content}>{textFields}</Container>
           </Col>
@@ -196,7 +218,9 @@ function HighlightCreateForm() {
               className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
             >
               <div>
+                {/* Image upload */}
                 <Form.Group className="text-center">
+                  {/* Display image if there is one and give option to upload new */}
                   {image ? (
                     <>
                       <figure>
@@ -220,6 +244,7 @@ function HighlightCreateForm() {
                         </Alert>
                       ))}
                     </>
+                  // If there is no image, display upload button
                   ) : (
                     <Form.Label
                       className="d-flex justify-content-center"
@@ -229,6 +254,7 @@ function HighlightCreateForm() {
                     </Form.Label>
                   )}
 
+                  {/* Upload button hidden with CSS, custom button above is used instead */}
                   <Form.File
                     id="image-upload"
                     accept="image/*"
@@ -239,6 +265,7 @@ function HighlightCreateForm() {
                 </Form.Group>
               </div>
 
+              {/* Display the text fields on small screens */}
               <div className="d-md-none">{textFields}</div>
             </Container>
           </Col>
