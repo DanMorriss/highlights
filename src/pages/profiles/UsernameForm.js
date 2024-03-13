@@ -17,6 +17,12 @@ import {
 import btnStyles from "../../styles/Buttons.module.css";
 import appStyles from "../../App.module.css";
 
+/**
+ * UsernameForm component for handling username change.
+ *
+ * @param {event} event - The event object for form submission
+ * @return {JSX.Element} The JSX for the UsernameForm component
+ */
 const UsernameForm = () => {
   const [username, setUsername] = useState("");
   const [errors, setErrors] = useState({});
@@ -28,6 +34,13 @@ const UsernameForm = () => {
   const setCurrentUser = useSetCurrentUser();
 
   useEffect(() => {
+
+    /*
+    * Asynchronously handles the mounting of the component if the user is the owner of the profile. 
+    * Fetches the username from the server and sets it in the state: username.
+    * If the user is not the owner, redirects the user to the homepage.
+    */
+
     if (currentUser?.profile_id?.toString() === id) {
       setUsername(currentUser.username);
     } else {
@@ -35,6 +48,13 @@ const UsernameForm = () => {
     }
   }, [currentUser, history, id]);
 
+  /**
+   * Handles the form submission asynchronously.
+   * Then sends the user back to their profile page.
+   *
+   * @param {object} event - The event object
+   * @return {Promise} A promise representing the completion of the form submission
+   */
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -57,6 +77,7 @@ const UsernameForm = () => {
       <Col className="py-2 mx-auto text-center" md={6}>
         <Container className={appStyles.Content}>
           <Form onSubmit={handleSubmit} className="my-2">
+            {/* Username */}
             <Form.Group>
               <Form.Label>Change username</Form.Label>
               <Form.Control
@@ -71,6 +92,7 @@ const UsernameForm = () => {
                 {message}
               </Alert>
             ))}
+            {/* Save and cancel buttons */}
             <Button
               className={`${btnStyles.Button} ${btnStyles.Blue}`}
               onClick={() => history.goBack()}

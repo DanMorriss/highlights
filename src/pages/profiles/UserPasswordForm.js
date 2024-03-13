@@ -14,6 +14,11 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import btnStyles from "../../styles/Buttons.module.css";
 import appStyles from "../../App.module.css";
 
+/**
+ * A function for handling the user password form, including form submission and error handling.
+ *
+ * @param {Event} event - The event object from the form submission.
+ */
 const UserPasswordForm = () => {
   const history = useHistory();
   const { id } = useParams();
@@ -27,6 +32,11 @@ const UserPasswordForm = () => {
 
   const [errors, setErrors] = useState({});
 
+  /**
+   * Handles the change event and updates the user data.
+   *
+   * @param {object} event - the event object
+   */
   const handleChange = (event) => {
     setUserData({
       ...userData,
@@ -41,6 +51,13 @@ const UserPasswordForm = () => {
     }
   }, [currentUser, history, id]);
 
+  /**
+   * Handles the form submission asynchronously.
+   * Then sends the user back to their profile page.
+   *
+   * @param {Object} event - The event object
+   * @return {Promise} A promise representing the result of the form submission
+   */
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -57,6 +74,7 @@ const UserPasswordForm = () => {
       <Col className="py-2 mx-auto text-center" md={6}>
         <Container className={appStyles.Content}>
           <Form onSubmit={handleSubmit}>
+            {/* new password1 */}
             <Form.Group>
               <Form.Label>New password</Form.Label>
               <Form.Control
@@ -72,6 +90,7 @@ const UserPasswordForm = () => {
                 {message}
               </Alert>
             ))}
+            {/* new password2 */}
             <Form.Group>
               <Form.Label>Confirm password</Form.Label>
               <Form.Control
@@ -87,6 +106,7 @@ const UserPasswordForm = () => {
                 {message}
               </Alert>
             ))}
+            {/* Save and cancel buttons */}
             <Button
               className={`${btnStyles.Button} ${btnStyles.Blue}`}
               onClick={() => history.goBack()}
