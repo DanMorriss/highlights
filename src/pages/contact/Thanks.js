@@ -4,6 +4,11 @@ import appStyles from "../../App.module.css";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 import { useRedirect } from "../../hooks/useRedirect";
 
+/**
+ * Thanks component function that displays a message and a link after a user has filled out a contact form.
+ *
+ * @return {JSX.Element} The Thanks component UI
+ */
 const Thanks = () => {
   useRedirect("LoggedOut");
   return (
