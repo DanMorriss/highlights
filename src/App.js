@@ -18,6 +18,11 @@ import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import Contact from "./pages/contact/Contact";
 import Thanks from "./pages/contact/Thanks";
 
+/**
+ * Renders the main application component, including the navigation bar and various routes for different pages.
+ *
+ * @return {JSX.Element} The main application component
+ */
 function App() {
   const currentUser = useCurrentUser();
   const profile_id = currentUser?.profile_id || "";
