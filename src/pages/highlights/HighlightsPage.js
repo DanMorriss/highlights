@@ -17,6 +17,12 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../../pages/profiles/PopularProfiles";
 
+/**
+ * Fetches highlights based on the provided filter and query.
+ *
+ * @param {Object} props - Object containing message and optional filter
+ * @return {JSX.Element} The highlights page component
+ */
 function HighlightsPage({ message, filter = "" }) {
   const [highlights, setHighlights] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -25,6 +31,11 @@ function HighlightsPage({ message, filter = "" }) {
   const [query, setQuery] = useState("");
 
   useEffect(() => {
+    /**
+     * Fetches highlights using axiosReq.
+     * If successful, sets the highlights state and sets the hasLoaded state to true.
+     * If unsuccessful, logs the error.
+     */
     const fetchHighlights = async () => {
       try {
         const { data } = await axiosReq.get(
@@ -48,7 +59,9 @@ function HighlightsPage({ message, filter = "" }) {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
+        {/* Popular profiles on small screens displayed here */}
         <PopularProfiles mobile />
+        {/* Search bar */}
         <i className={`fas fa-search ${styles.SearchIcon}`}></i>
         <Form className={styles.SearchBar} onSubmit={(e) => e.preventDefault()}>
           <Form.Control
@@ -60,6 +73,7 @@ function HighlightsPage({ message, filter = "" }) {
           />
         </Form>
 
+        {/* Highlights list displayed once loaded inside infinite scroll */}
         {hasLoaded ? (
           <>
             {highlights.results.length ? (
@@ -76,18 +90,22 @@ function HighlightsPage({ message, filter = "" }) {
                 hasMore={!!highlights.next}
                 next={() => fetchMoreData(highlights, setHighlights)}
               />
+            // No results message if no results
             ) : (
               <Container className={appStyles.Content}>
                 <Asset src={NoResults} message={message} />
               </Container>
             )}
           </>
+        // Spinner if not loaded yet
         ) : (
           <Container className={appStyles.Content}>
             <Asset spinner />
           </Container>
         )}
       </Col>
+
+      {/* Popular profiles on large screens displayed here */}
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
         <PopularProfiles />
       </Col>
