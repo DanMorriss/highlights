@@ -67,3 +67,19 @@
     background-color: #ffffff;
     color: #CF8562;
   }
+
+  .LocationBtn {
+    border-radius: 1.5rem;
+    padding: 0;
+    margin: 0.1rem;
+    border: 1px solid #CF8562;
+    background-color: #CF8562;
+    color: #ffffff;
+  }
+  
+  .LocationBtn:hover {
+    cursor: pointer;
+    border: 1px solid #CF8562;
+    background-color: #ffffff;
+    color: #CF8562;
+  }

@@ -86,6 +86,9 @@ function ProfilePage() {
         {/* Profile name and stats */}
         <Col lg={6}>
           <h3 className="m-2">{profile?.owner}</h3>
+          {profile?.location && (
+            <p>{profile?.location}</p>
+          )}
           <Row className="justify-content-center no-gutters">
             {/* Posts */}
             <Col xs={3} className="my-2">

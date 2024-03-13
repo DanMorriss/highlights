@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import btnStyles from "../styles/Buttons.module.css";
 import { axiosReq } from "../api/axiosDefaults";
 import Asset from "./Asset";
-import { Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 
-const Location = () => {
+const Location = ({ updateLocation }) => {
   const [errors, setErrors] = useState({});
   const [locationData, setLocationData] = useState({
     latitude: "",
@@ -12,6 +12,7 @@ const Location = () => {
     name: "",
   });
   const [locationLoading, setLocationLoading] = useState(false);
+  const [locationFetched, setLocationFetched] = useState(false);
 
   /**
    * This function retrieves the current location using the browser's geolocation API,
@@ -40,25 +41,27 @@ const Location = () => {
       console.log(err);
     } finally {
       setLocationLoading(false);
+      setLocationFetched(true);
     }
   };
 
-  {/* Add location to database */}
+  
+  /* Add location to database */
   useEffect(() => {
     if (locationData) {
-      console.log(locationData);
       handleSubmit(locationData);
     }
-  }, [locationLoading]);
+  }, [locationFetched]);
 
   /**
    * Handle form submission asynchronously.
-   * 
+   *
    * @return {Promise} a Promise that resolves when the submission is handled
    */
   const handleSubmit = async (e) => {
     try {
       const { data } = await axiosReq.post("/locations/", locationData);
+      updateLocation(locationData);
     } catch (err) {
       console.log(err);
       setErrors(err.response?.data);
@@ -67,26 +70,28 @@ const Location = () => {
 
   return (
     <>
-      <div
-        className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-        onClick={getLocation}
-      >
-        <i class="fa-solid fa-location-dot"></i>
-      </div>
-      <Form>
-        <Form.Group>
-          <Form.Label>Add Location</Form.Label>
-          <Form.Control
-            type="text"
-            value={locationData.name}
+      {/* If location has been fetched, render the form */}
+      {locationFetched ? (
+        <>
+          <Form.Group>
+            <Form.Label>Location</Form.Label>
+            <Form.Control
+              type="text"
+              value={locationData.name}
+              onChange={(e) =>
+                setLocationData({ ...locationData, name: e.target.value })
+              }
+            />
+          </Form.Group>
+        </>
+      ) : (
+        // If location has not been fetched, render the button to fetch location
+        <div className={`${btnStyles.LocationBtn}`} onClick={getLocation}>
+          <i class="fa-solid fa-location-dot"></i> Add Location
+        </div>
+      )}
 
-            onChange={(e) => setLocationData({ ...locationData, name: e.target.value })}
-          />
-        </Form.Group>
-      </Form>
-      <div>
-        {locationLoading && <Asset spinner />}
-      </div>
+      <div>{locationLoading && <Asset spinner />}</div>
     </>
   );
 };

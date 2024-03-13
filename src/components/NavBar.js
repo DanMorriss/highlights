@@ -40,7 +40,7 @@ const NavBar = () => {
     </NavLink>
   );
 
-  {/* Logged out links: Sign in, Sign up */}
+  /* Logged out links: Sign in, Sign up */
   const loggedOutLinks = (
     <>
       <NavLink
@@ -60,7 +60,7 @@ const NavBar = () => {
     </>
   );
 
-  {/* Logged in links: Feed, Liked, Profile, Sign out */}
+  /* Logged in links: Feed, Liked, Profile, Sign out */
   const loggedInLinks = (
     <>
       <NavLink
