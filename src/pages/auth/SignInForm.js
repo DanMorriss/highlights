@@ -16,6 +16,11 @@ import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
 
+/**
+ * Generate the sign-in form with username and password fields.
+ *
+ * @param {Event} e - The event triggering the form submission.
+ */
 const SignInForm = () => {
   const setCurrentUser = useSetCurrentUser();
   useRedirect('loggedIn');
@@ -28,6 +33,11 @@ const SignInForm = () => {
   const [errors, setErrors] = useState({});
   const history = useHistory();
 
+  /**
+   * A function that handles the change event.
+   *
+   * @param {Object} e - the event object
+   */
   const handleChange = (e) => {
     setSignInData({
       ...signInData,
@@ -35,6 +45,12 @@ const SignInForm = () => {
     });
   };
 
+  /**
+   * Handles form submission, making a POST request to log in the user.
+   *
+   * @param {Event} e - the event object triggering the function
+   * @return {Promise<void>} a Promise that resolves when the submission is handled
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -46,12 +62,14 @@ const SignInForm = () => {
       setErrors(err.response?.data);
     }
   };
+
   return (
     <Row className="mt-3">
       <Col className="my-auto" md={6}>
         <Container>
           <h1 className={`${appStyles.Handwritten} text-center pb-4`}>Sign in</h1>
           <Form onSubmit={handleSubmit} className="d-flex flex-column">
+            {/* Username */}
             <Form.Group controlId="username">
               <Form.Label className="d-none">Username</Form.Label>
               <Form.Control
@@ -69,6 +87,7 @@ const SignInForm = () => {
               </Alert>
             ))}
 
+            {/* Password */}
             <Form.Group controlId="password">
               <Form.Label className="d-none">Password</Form.Label>
               <Form.Control
@@ -86,6 +105,7 @@ const SignInForm = () => {
               </Alert>
             ))}
 
+            {/* Sign in button */}
             <Button
               className={btnStyles.Button}
               variant="primary"
@@ -101,12 +121,16 @@ const SignInForm = () => {
             ))}
           </Form>
         </Container>
+
+        {/* Sign up link */}
         <Container className="text-center pt-3">
           <p>
             Don't have an account? <Link to="/signup">Sign up</Link>
           </p>
         </Container>
       </Col>
+
+      {/* Image Column only displayed on medium and large screens */}
       <Col className={`${styles.ImageCol} d-none d-md-block my-auto`} md={6}>
         <Image
           className={styles.Image}
