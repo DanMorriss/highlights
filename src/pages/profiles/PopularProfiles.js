@@ -20,7 +20,7 @@ const PopularProfiles = ({ mobile }) => {
         mobile && "d-lg-none text-center mb-3"
       }`}
     >
-      <p>Most followed profiles</p>
+      <p>Who to follow?</p>
       {/* If there are popular profiles, do the following */}
       {popularProfiles.results.length ? (
         <>
