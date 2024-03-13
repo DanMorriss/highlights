@@ -15,6 +15,9 @@ import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 
+/**
+ * Render the HighlightPage component.
+ */
 const HighlightPage = () => {
   const { id } = useParams();
   const [highlight, setHighlight] = useState({ results: [] });
@@ -23,6 +26,10 @@ const HighlightPage = () => {
   const [comments, setComments] = useState({ results: [] });
 
   useEffect(() => {
+    /**
+     * Asynchronous function to handle mounting process.
+     * Gets the highlight and comments from the server.
+     */
     const handleMount = async () => {
       try {
         const [{ data: highlight }, { data: comments }] = await Promise.all([
@@ -42,13 +49,18 @@ const HighlightPage = () => {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
+        {/* Display popular profiles for small screens */}
         <PopularProfiles mobile />
+        {/* Display highlight */}
         <Highlight
           {...highlight.results[0]}
           setHighlight={setHighlight}
           highlightPage
         />
+        {/* Display comments */}
         <Container className={appStyles.Content}>
+          {/* COMMENTS TITLE */}
+          {/* Display comment create form if user is logged in */}
           {currentUser ? (
             <CommentCreateForm
               profile_id={currentUser.profile_id}
@@ -57,9 +69,13 @@ const HighlightPage = () => {
               setHighlight={setHighlight}
               setComments={setComments}
             />
+          // Display comments if user is not logged in and there are comments
           ) : comments.results.length ? (
             "Comments"
+          // Display nothing if the user is not logged in and there are no comments
           ) : null}
+          {/* COMMENTS */}
+          {/* Display comments if there are comments */}
           {comments.results.length ? (
             <InfiniteScroll
               children={comments.results.map((comment) => (
@@ -75,8 +91,10 @@ const HighlightPage = () => {
               hasMore={!!comments.next}
               next={() => fetchMoreData(comments, setComments)}
             />
+          // If no comments and the user is logged in display a message
           ) : currentUser ? (
             <span>No comments yet, be the first to comment!</span>
+          // If no comments and the user is not logged in display a message
           ) : (
             <span>Log in to be the first to comment!</span>
           )}
