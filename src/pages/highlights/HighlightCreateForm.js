@@ -19,7 +19,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
 
 /**
- * Function to create a highlight form with text fields for title, description, and category, and an image upload option.
+ * Function to create a highlight form with text fields for title, description, improve and category, and an image upload option.
  */
 function HighlightCreateForm() {
   useRedirect("loggedOut");

@@ -43,8 +43,8 @@ const Profile = (props) => {
         {!mobile &&
           currentUser &&
           !is_owner &&
-          // If the user is following the profile, display the Unfollow button
-          (following_id ? (
+          // If the user is following the profile, display the Un-follow button for desktop users
+          (!mobile && following_id ? (
             <Button
               className={btnStyles.UnFollowBtn}
               onClick={() => handleUnfollow(profile)}
@@ -52,7 +52,7 @@ const Profile = (props) => {
             >
               <i className={`fa-solid fa-user-minus ${btnStyles.Icon}`}></i>
             </Button>
-          // If the user is not following the profile, display the Follow button
+          // If the user is not following the profile, display the Follow button for desktop users
           ) : (
             <Button
               className={btnStyles.FollowBtn}

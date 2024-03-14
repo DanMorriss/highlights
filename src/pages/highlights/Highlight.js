@@ -53,7 +53,7 @@ const Highlight = (props) => {
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/highlights/${id}/`);
-      history.goBack();
+      history.push('/feed/');
     } catch (err) {
       console.log(err);
     }
