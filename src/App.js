@@ -17,6 +17,7 @@ import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import Contact from "./pages/contact/Contact";
 import Thanks from "./pages/contact/Thanks";
+import PageNotFound from "./components/PageNotFound";
 
 /**
  * Renders the main application component, including the navigation bar and various routes for different pages.
@@ -95,7 +96,7 @@ function App() {
           />
           <Route exact path="/contact-us" render={() => <Contact />} />
           <Route exact path="/contact-us/thanks" render={() => <Thanks />} />
-          <Route render={() => <h1>Page not found</h1>} />
+          <Route render={() => <PageNotFound />} />
         </Switch>
       </Container>
     </div>
