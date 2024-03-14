@@ -20,7 +20,6 @@ import btnStyles from "../../styles/Buttons.module.css";
 const Contact = () => {
   useRedirect("loggedOut");
   const currentUser = useCurrentUser();
-  console.log(currentUser?.username);
   const [contactFormData, setContactFormData] = useState({
     fname: "",
     lname: "",
@@ -56,7 +55,7 @@ const Contact = () => {
       await axiosReq.post("/feedback/", contactFormData);
       history.push("/contact-us/thanks");
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       setErrors(err.response?.data);
     }
   };

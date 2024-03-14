@@ -68,7 +68,7 @@ function HighlightEditForm() {
             })
           : history.push("/");
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 
@@ -124,7 +124,7 @@ function HighlightEditForm() {
       await axiosReq.put(`/highlights/${id}/`, formData);
       history.push(`/highlights/${id}`);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }

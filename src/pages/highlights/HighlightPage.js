@@ -38,7 +38,7 @@ const HighlightPage = () => {
         setHighlight({ results: [highlight] });
         setComments(comments);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 

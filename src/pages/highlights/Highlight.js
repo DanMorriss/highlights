@@ -58,7 +58,7 @@ const Highlight = (props) => {
       await axiosRes.delete(`/highlights/${id}/`);
       history.push('/feed/');
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -91,7 +91,7 @@ const Highlight = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -114,7 +114,7 @@ const Highlight = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
