@@ -30,10 +30,11 @@ function HighlightEditForm() {
     created_on: "",
     title: "",
     description: "",
+    improve: "",
     category: "",
     image: "",
   });
-  const { created_on, title, description, category, image } = highlightData;
+  const { created_on, title, description, improve, category, image } = highlightData;
 
   const date = new Date(created_on);
   const options = {
@@ -57,13 +58,14 @@ function HighlightEditForm() {
     const handleMount = async () => {
       try {
         const { data } = await axiosReq.get(`/highlights/${id}/`);
-        const { created_on, title, description, category, image, is_owner } =
+        const { created_on, title, description, improve, category, image, is_owner } =
           data;
         is_owner
           ? setHighlightData({
               created_on,
               title,
               description,
+              improve,
               category,
               image,
             })
@@ -115,6 +117,7 @@ function HighlightEditForm() {
 
     formData.append("title", title);
     formData.append("description", description);
+    formData.append("improve", improve);
     formData.append("category", category);
     if (imageInput.current.files[0]) {
       formData.append("image", imageInput.current.files[0]);
@@ -162,6 +165,25 @@ function HighlightEditForm() {
           rows={5}
           placeholder="Give some more detail on what made this highlight so great..."
           value={description}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      {errors.description?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+      {/* Improve */}
+      <Form.Group controlId="improve">
+        <Form.Label>What would have made today even better?</Form.Label>
+        <Form.Control
+          className={styles.Input}
+          name="improve"
+          as="textarea"
+          rows={2}
+          placeholder="Is there anything you'd like to do tomorrow?"
+          value={improve}
           onChange={handleChange}
         />
       </Form.Group>

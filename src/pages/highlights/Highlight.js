@@ -18,6 +18,7 @@ const Highlight = (props) => {
     id,
     title,
     description,
+    improve,
     image,
     category,
     location,
@@ -38,7 +39,7 @@ const Highlight = (props) => {
   const history = useHistory();
 
   /**
-   * Handles the click event for the edit button, 
+   * Handles the click event for the edit button,
    * and navigates to the edit page.
    */
   const handleEdit = () => {
@@ -145,8 +146,8 @@ const Highlight = (props) => {
                 />
               )}
             </div>
-          // Displays the date on the highlight page
           ) : (
+            // Displays the date on the highlight page
             <div className="d-flex align-items-center">
               <span className={`${styles.DiaryFont}`}>{formattedDate}</span>
               {/* Dropdown menu for editing and deleting highlights if the user is the owner */}
@@ -197,6 +198,17 @@ const Highlight = (props) => {
         {description && highlightPage && (
           <Card.Text className="text-center">{description}</Card.Text>
         )}
+
+        {/* Displays the improve on the highlight page if there is one */}
+        {improve && highlightPage && (
+          <>
+            <Card.Title className={`${styles.DiaryQuestions} mb-3`}>
+              What would have made today even better?
+            </Card.Title>
+            <Card.Text className="text-center">{improve}</Card.Text>
+          </>
+        )}
+
         <div className={` d-flex justify-content-center align-items-center`}>
           {/* If the user is the owner, let them know they can't like their own highlight */}
           {is_owner ? (
@@ -206,18 +218,18 @@ const Highlight = (props) => {
             >
               <i className="far fa-heart"></i>
             </OverlayTrigger>
-          // If the user has liked the highlight, display the filled in heart
-          ) : like_id ? (
+          ) : // If the user has liked the highlight, display the filled in heart
+          like_id ? (
             <span onClick={handleUnlike}>
               <i className={`fas fa-heart ${styles.Heart}`} />
             </span>
-          // If the user has not liked the highlight and is logged in, display the outline
-          ) : currentUser ? (
+          ) : // If the user has not liked the highlight and is logged in, display the outline
+          currentUser ? (
             <span onClick={handleLike}>
               <i className={`far fa-heart ${styles.HeartOutline}`} />
             </span>
-          // If the user is not logged in, display the outline and tell them to log in to like a highlight
           ) : (
+            // If the user is not logged in, display the outline and tell them to log in to like a highlight
             <OverlayTrigger
               placement="top"
               overlay={<Tooltip>Log in to like a highlight</Tooltip>}

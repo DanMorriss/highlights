@@ -28,10 +28,11 @@ function HighlightCreateForm() {
   const [highlightData, setHighlightData] = useState({
     title: "",
     description: "",
+    improve: "",
     category: "",
     image: "",
   });
-  const { title, description, category, image } = highlightData;
+  const { title, description, improve, category, image } = highlightData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -73,7 +74,7 @@ function HighlightCreateForm() {
     formData.append("title", title);
     formData.append("description", description);
     formData.append("category", category);
-    // formData.append("tagged_user", tagged_user);
+    formData.append("improve", improve);
     if (imageInput.current.files[0]) {
       formData.append("image", imageInput.current.files[0]);
     }
@@ -129,6 +130,25 @@ function HighlightCreateForm() {
         </Alert>
       ))}
 
+      {/* Improve */}
+      <Form.Group controlId="improve">
+        <Form.Label>What would have made today even better?</Form.Label>
+        <Form.Control
+          className={styles.Input}
+          name="improve"
+          as="textarea"
+          rows={2}
+          placeholder="Is there anything you'd like to do tomorrow?"
+          value={improve}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      {errors.description?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
       {/* Category */}
       <Form.Group controlId="category">
         <Form.Label>Category</Form.Label>
@@ -161,24 +181,6 @@ function HighlightCreateForm() {
           {message}
         </Alert>
       ))}
-
-      {/* Tagged User */}
-      {/* <Form.Group controlId="tagged_user">
-        <Form.Label>Tag someone</Form.Label>
-        <Form.Control
-          className={styles.Input}
-          name="tagged_user"
-          type="text"
-          placeholder="Search for a user..."
-          value={tagged_user}
-          onChange={handleChange}
-        />
-      </Form.Group>
-      {errors.tagged_user?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))} */}
 
       {/* Post button */}
       <Button
