@@ -83,13 +83,6 @@ export function ProfileEditDropdown({ id }) {
           <i className={`${styles.Icon} fas fa-key`} />
           change password
         </Dropdown.Item>
-        <Dropdown.Item
-          onClick={() => history.push(`/profiles/${id}/edit/location`)}
-          aria-label="add-location"
-          className={styles.DropdownItemWithText}
-        >
-          <i className={`${styles.Icon} fas fa-location-dot`} /> Add Location
-        </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   );
