@@ -23,7 +23,6 @@ const Highlight = (props) => {
     location,
     tagged_user,
     created_on,
-    updated_on,
     owner,
     profile_image,
     profile_id,
@@ -97,7 +96,7 @@ const Highlight = (props) => {
    */
   const handleUnlike = async () => {
     try {
-      const { data } = await axiosRes.delete(`/likes/${like_id}/`);
+      await axiosRes.delete(`/likes/${like_id}/`);
       setHighlight((prevHighlights) => ({
         ...prevHighlights,
         results: prevHighlights.results.map((highlight) => {

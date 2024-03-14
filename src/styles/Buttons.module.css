@@ -75,6 +75,7 @@
     border: 1px solid #CF8562;
     background-color: #CF8562;
     color: #ffffff;
+    width: fit-content;
   }
   
   .LocationBtn:hover {
@@ -82,4 +83,8 @@
     border: 1px solid #CF8562;
     background-color: #ffffff;
     color: #CF8562;
+  }
+
+  .LocationBtn i {
+    padding-top: 0.7rem;
   }

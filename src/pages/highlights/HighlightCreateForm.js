@@ -29,9 +29,7 @@ function HighlightCreateForm() {
     title: "",
     description: "",
     category: "",
-    // tagged_user: "",
     image: "",
-    // location: "",
   });
   const { title, description, category, image } = highlightData;
 
@@ -64,7 +62,6 @@ function HighlightCreateForm() {
       });
     }
   };
-
 
   /**
    * Handles the form submission.
