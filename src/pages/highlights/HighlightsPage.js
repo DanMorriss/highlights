@@ -13,6 +13,7 @@ import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../../pages/profiles/PopularProfiles";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 /**
  * Fetches highlights based on the provided filter and query.
@@ -24,6 +25,7 @@ function HighlightsPage({ message, filter = "" }) {
   const [highlight, setHighlight] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
+  const currentUser = useCurrentUser();
 
   const [query, setQuery] = useState("");
 
@@ -51,7 +53,7 @@ function HighlightsPage({ message, filter = "" }) {
     return () => {
       clearTimeout(timer);
     };
-  }, [filter, query, pathname]);
+  }, [filter, query, pathname, currentUser]);
 
   return (
     <Row className="h-100">
