@@ -2,25 +2,9 @@
   position: relative;
   background-color: #FFF5E6;
   border: 0 solid #cdb990;
+  border-radius: 1.5rem;
   margin: 0.5rem;
-  /* horizontal, vertical, blur, spread */
-  box-shadow: -0.2rem 0.2rem  0.2rem  0.1rem #decfbc;
-}
-
-.Highlight::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-width: 0 2rem 2rem 0;
-  border-style: solid;
-  border-color: #cdb990 #FFF5E6;
-  box-shadow: -0.2rem 0.2rem  0.2rem  0.01rem #decfbc;
-  transition: all ease 0.5s;
-}
-
-.Highlight:hover::before {
-  border-width: 0 2.9rem 2.9rem 0;
+  box-shadow: 0 0 0.6rem 0.1rem #decfbc;
 }
 
 .Highlight figure,
