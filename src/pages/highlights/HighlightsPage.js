@@ -24,7 +24,7 @@ import PopularProfiles from "../../pages/profiles/PopularProfiles";
  * @return {JSX.Element} The highlights page component
  */
 function HighlightsPage({ message, filter = "" }) {
-  const [highlights, setHighlights] = useState({ results: [] });
+  const [highlight, setHighlight] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
 
@@ -41,7 +41,7 @@ function HighlightsPage({ message, filter = "" }) {
         const { data } = await axiosReq.get(
           `/highlights/?${filter}search=${query}`
         );
-        setHighlights(data);
+        setHighlight(data);
         setHasLoaded(true);
       } catch (err) {
         console.log(err);
@@ -76,19 +76,19 @@ function HighlightsPage({ message, filter = "" }) {
         {/* Highlights list displayed once loaded inside infinite scroll */}
         {hasLoaded ? (
           <>
-            {highlights.results.length ? (
+            {highlight.results.length ? (
               <InfiniteScroll
-                children={highlights.results.map((highlight) => (
+                children={highlight.results.map((highlight) => (
                   <Highlight
                     key={highlight.id}
                     {...highlight}
-                    setHighlights={setHighlights}
+                    setHighlight={setHighlight}
                   />
                 ))}
-                dataLength={highlights.results.length}
+                dataLength={highlight.results.length}
                 loader={<Asset spinner />}
-                hasMore={!!highlights.next}
-                next={() => fetchMoreData(highlights, setHighlights)}
+                hasMore={!!highlight.next}
+                next={() => fetchMoreData(highlight, setHighlight)}
               />
             // No results message if no results
             ) : (
