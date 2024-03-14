@@ -1,5 +1,6 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 import styles from "../../styles/About.module.css";
 import btnStyles from "../../styles/Buttons.module.css";
 import appStyles from "../../App.module.css";

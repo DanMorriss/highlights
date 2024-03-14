@@ -1,3 +1,4 @@
+import jwtDecode from "jwt-decode";
 import { axiosReq } from "../api/axiosDefaults";
 
 export const fetchMoreData = async (resource, setResource) => {
@@ -57,4 +58,31 @@ export const unfollowHelper = (profile, clickedProfile) => {
     : // This is not the profile the user clicked on or the profile of the logged in user
       // Return it unchanged
       profile;
+}
+
+/**
+ * Sets the refresh token timestamp in the local storage based on the provided data.
+ *
+ * @param {object} data - The data containing the refresh token
+ */
+export const setTokenTimestamp = (data) => {
+  const refreshTokenTimestamp = jwtDecode(data?.refresh_token).exp
+  localStorage.setItem("refreshTokenTimestamp", refreshTokenTimestamp)
+}
+
+/**
+ * Checks if the refresh token needs to be refreshed.
+ * Will refresh for a logged in user.
+ *
+ * @return {boolean} true if the refresh token needs to be refreshed, false otherwise
+ */
+export const shouldRefreshToken = () => {
+  return !!localStorage.getItem("refreshTokenTimestamp")
+}
+
+/**
+ * Removes the "refreshTokenTimestamp" from the local storage.
+ */
+export const removeTokenTimestamp = () => {
+  localStorage.removeItem("refreshTokenTimestamp")
 }

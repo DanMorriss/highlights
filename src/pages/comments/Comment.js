@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../../styles/Comment.module.css";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import { Media } from "react-bootstrap";
+import Media from "react-bootstrap/Media";
 import Avatar from "../../components/Avatar";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { MoreDropdown } from "../../components/MoreDropdown";

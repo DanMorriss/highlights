@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 import appStyles from "../../App.module.css";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 import { useRedirect } from "../../hooks/useRedirect";

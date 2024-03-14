@@ -1,20 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-
+import Alert from "react-bootstrap/Alert";
+import Image from "react-bootstrap/Image";
 import Upload from "../../assets/upload.png";
-
 import styles from "../../styles/HighlightCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Buttons.module.css";
 import Asset from "../../components/Asset";
-import { Alert, Image } from "react-bootstrap";
 import { useHistory } from "react-router";
-
 import { axiosReq } from "../../api/axiosDefaults";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import NotFound from "../assets/404.png";
-import { Image } from "react-bootstrap";
+import Image from "react-bootstrap/Image";
 import Styles from "../styles/PageNotFound.module.css";
 
 const PageNotFound = () => {

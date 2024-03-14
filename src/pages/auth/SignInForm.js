@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import {
-  Col,
-  Container,
-  Form,
-  Row,
-  Button,
-  Image,
-  Alert,
-} from "react-bootstrap";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Image from "react-bootstrap/Image";
+import Alert from "react-bootstrap/Alert";
 import styles from "../../styles/SignInForm.module.css";
 import btnStyles from "../../styles/Buttons.module.css";
 import appStyles from "../../App.module.css";
@@ -15,6 +13,7 @@ import { Link, useHistory } from "react-router-dom/cjs/react-router-dom";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
+import { setTokenTimestamp } from "../../utils/utils";
 
 /**
  * Generate the sign-in form with username and password fields.
@@ -56,7 +55,7 @@ const SignInForm = () => {
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       setCurrentUser(data.user);
-      // history.goBack();
+      setTokenTimestamp(data);
       history.push('/feed');
     } catch (err) {
       setErrors(err.response?.data);

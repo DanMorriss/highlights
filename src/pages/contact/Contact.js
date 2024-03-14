@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import { Alert, Col, Container, Form, Row } from "react-bootstrap";
+import Alert from "react-bootstrap/Alert";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosReq } from "../../api/axiosDefaults";
