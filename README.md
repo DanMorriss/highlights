@@ -26,7 +26,8 @@ I followed the five planes of Website Design in the creation of this project.
 
 ### 1. Strategy
 
-My strategy is to develop a social media platform designed to foster gratitude and enhance users perspective on life. Drawing inspiration from the principal of the five minute journal, the platform aims to provide a space where individuals can share their best highlights of their day. Grounded in scientific research on the benefits of gratitude, the platform aims to cultivate a positive online community.
+- Develop a social media platform designed to foster gratitude and enhance users perspective on life. 
+- Drawing inspiration from the principal of the five minute journal, the platform aims to provide a space where individuals can share their best highlights of their day. Grounded in scientific research on the benefits of gratitude, the platform aims to cultivate a positive online community.
 
 Key features:
 - Highlight sharing: Users can post the highlights of their day, promoting reflection and appreciation for positive moments.
@@ -95,13 +96,12 @@ General
 
 ### 3. Structure
 
+For the database schema visit the [Backend API Repo](https://github.com/DanMorriss/drf-highlights#3-structure)
+
 ![Sitemap](docs/wireframes/sitemap.png)
+The sitemap was made using [Lucid Chart](https://lucid.app/)
 
 ### 4. Skeleton
-
-#### Database
-
-Visit backend repo.
 
 #### Wireframes
 
@@ -112,10 +112,23 @@ Visit backend repo.
 ![create highlight wireframe](/docs/wireframes/add-a-highlight-woreframe.png)
 ![highlight wireframe](/docs/wireframes/highlight-wireframe.png)
 ![profile wireframe](/docs/wireframes/profile-wireframe.png)
-
+[Canva](https://www.canva.com/en_gb/) was used to create the wireframes.
 ### 5. Surface
 
+- Color and themes were based on the five minute journal, using earthy calming colors and a mix of clean and handwritten fonts.
+
 ![Color Palette](/docs//readme/color-palette.png)
+The color palette was built using [Adobe Color](https://color.adobe.com/)
+- #FFF5E6
+- #DECFDC
+- #453A2C
+- #CDB990
+- #CF8562
+
+![Fonts](/docs/readme/fonts.jpg)
+[Google Fonts](https://fonts.google.com/) supplied the fonts
+- Montserrat
+- Homemade Apple
 
 ## Features
 
