@@ -120,7 +120,7 @@ The sitemap was made using [Lucid Chart](https://lucid.app/)
 ![Color Palette](/docs//readme/color-palette.png)
 The color palette was built using [Adobe Color](https://color.adobe.com/)
 - #FFF5E6
-- #DECFDC
+- #DECFBC
 - #453A2C
 - #CDB990
 - #CF8562

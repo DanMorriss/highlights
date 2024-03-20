@@ -56,7 +56,7 @@ const Highlight = (props) => {
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/highlights/${id}/`);
-      history.push('/feed/');
+      history.push("/feed/");
     } catch (err) {
       // console.log(err);
     }
@@ -167,7 +167,9 @@ const Highlight = (props) => {
 
       {/* If there is an image, display it as a link to the highlight page */}
       {image && (
-        <Link to={`/highlights/${id}`}>
+        <Link
+          to={`/highlights/${id}`}
+        >
           <Card.Img src={image} alt={title} />
         </Link>
       )}

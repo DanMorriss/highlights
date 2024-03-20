@@ -1,10 +1,27 @@
 .Highlight {
   position: relative;
-  background-color: #FFF5E6;
+  background-color: #fff7ea;
   border: 0 solid #cdb990;
-  border-radius: 1.5rem;
+  border-radius: 0.3rem;
   margin: 0.5rem;
-  box-shadow: 0 0 0.6rem 0.1rem #decfbc;
+  box-shadow: rgba(0, 0, 0, 0.15) -2.4px 2.4px 3.2px;
+}
+
+.Highlight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-width: 0 2rem 2rem 0;
+  border-style: solid;
+  border-color: #DECFBC #FFF5E6;
+  transition: ease-in-out 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.15) -2.4px 2px 2px;
+
+}
+
+.Highlight:hover::before {
+  border-width: 0 2.8rem 2.8rem 0;
 }
 
 .Highlight figure,

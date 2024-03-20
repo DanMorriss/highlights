@@ -5,9 +5,7 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosReq } from "../../api/axiosDefaults";
-import { useRedirect } from "../../hooks/useRedirect";
 import styles from "../../styles/Contact.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Buttons.module.css";
@@ -18,7 +16,6 @@ import btnStyles from "../../styles/Buttons.module.css";
  * @return {JSX.Element} The contact form component
  */
 const Contact = () => {
-  const currentUser = useCurrentUser();
   const [contactFormData, setContactFormData] = useState({
     fname: "",
     lname: "",

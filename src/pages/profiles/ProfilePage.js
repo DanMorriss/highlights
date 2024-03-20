@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
 import Asset from "../../components/Asset";
 import styles from "../../styles/ProfilePage.module.css";
-import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Buttons.module.css";
 import PopularProfiles from "./PopularProfiles";
 import Button from "react-bootstrap/Button";
@@ -170,7 +168,6 @@ function ProfilePage() {
     <Row>
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
-        <Container className={appStyles.Content}>
           {/* Check if there are any profile data and show it or else show an Asset */}
           {hasLoaded ? (
             <>
@@ -180,7 +177,6 @@ function ProfilePage() {
           ) : (
             <Asset spinner />
           )}
-        </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
         <PopularProfiles />
