@@ -1,33 +1,24 @@
-[Deployed Frontend Site](https://pp5-highlights-a86c2f8f4016.herokuapp.com/)
-[Deployed API](https://drf-highlights-319d26c2d75e.herokuapp.com/)
+[Deployed Frontend Site](https://pp5-highlights-a86c2f8f4016.herokuapp.com/)  
+[Deployed API](https://drf-highlights-319d26c2d75e.herokuapp.com/)  
+[API Repo](https://github.com/DanMorriss/drf-highlights)
 
 Needed to run the following commands to use the correct version of npm:
-`nvm install 16`  
-``nvm use 16`  
+`nvm install 16 && use 16`  
 
 **Portfolio Project 5**
 
-# Highlights // Your Highlights Journal
-
-**What was the best part of your day?**
-
-Possible features to implement that are not in the Moments walkthrough:
-
-- Link to another user in a highlight
-- Add a category to a highlight
-- Add a location to a highlight
-- A calendar view at the top of users profiles with links to the highlights
-- Feedback form for users to send to admin
+# Highlights
 
 ## About
 
 Highlights ia a social media platform designed to cultivate gratitude and positivity in everyday life. Inspired by the principles of the Five Minute Journal, our platform provides users with a space to share the highlights of their day and connect with others in a supportive online community.
 
 Key Features:
-- Highlight Sharing: Easily post and share the highlights of your day, complete with text descriptions, images, user tags and locations.
+- Highlight Sharing: Easily post and share the highlights of your day, complete with text descriptions and images.
 - Interactive Features: Engage with other users' highlights through likes, comments, and following other users.
-- Search and Discovery: Explore highlights by keywords, categories, and user tags to find inspiration and connect with like-minded individuals.
-- Calendar Integration: Visualize and track your daily highlights over time with a convenient calendar interface.
+- Search and Discovery: Explore highlights by keywords, categories, and following other users to find inspiration and connect with like-minded individuals.
+- User Profiles: View your profile and share your highlights with other users.
+- Follow and Un-follow: Follow and un-follow other users to build a more engaged online community.
 
 ## UX
 
@@ -39,13 +30,14 @@ My strategy is to develop a social media platform designed to foster gratitude a
 
 Key features:
 - Highlight sharing: Users can post the highlights of their day, promoting reflection and appreciation for positive moments.
-- Interactive Features: To encourage engagement, user have the option to add categories, attach images, tag other users in their posts and add locations.
-- Search Functionality: Users can search for highlights by tags, category, or location.
+- Interactive Features: To encourage engagement, user have the option to add categories, attach images, and think about things they could improve on.
+- Search Functionality: Users can search for highlights by content, category, or user.
 - User profiles: Users can view their profile and share their highlights with other users.
-- Calendar display: Users can view their highlights on a calendar view.
 - Follow and Un-follow: Users can follow and un-follow other users.
 
 #### User Stories
+
+For more details on the user stoies go to the [projects kanban board](https://github.com/users/DanMorriss/projects/8)
 
 Create an account & Login
 - Landing Page
@@ -85,28 +77,26 @@ General
 - Contact Form
 - Tag users in a highlight.
 - Add location.
-- As a site owner I want the site to be fully responsive across all screen sizes so it can be used on any device.
-- As a site owner I want the site to be easy to use so I can easily navigate and use it.
-- As a site owner I want the site to be secure so I can use it safely and securely.
-- As a site owner I want a 404 page so users know when they have tried to access a page that does not exist.
-- As a user I want messages feedback messages to be shown when I create, update or delete a highlight or comment so that I can see if I am using the site correctly.
-
-Features to add once MVP is created
-- Location data
+- Responsive site.
+- Simple user navigation.
+- 404 page.
+- User messages.
 
 ### 2. Scope
 
 - Purpose: The purpose of the website is to provide a platform for users to share the highlight of their day, fostering gratitude and a positive outlook on life. The website aims to create a supportive online community where users can connect, inspire and uplift each other.
 - Target Audience: The target audience includes individuals who are interested in personal development, mindfulness, and self-improvement. This may include a diverse range of demographics, including young adults, professionals, parents, and students, who share a common interest in cultivating gratitude and positivity.
 - Core Functionality:
-    - Highlight sharing: Users can easily post and share the highlights of their day, including text descriptions, images, locations, categories and other users.
+    - Highlight sharing: Users can easily post and share the highlights of their day, including text descriptions, images, categories and things to improve your day.
     - Interactive features: The website enables users to engage with each others highlights through likes and comments, fostering a sense of community and connection.
-    - Search and Discovery: Robust search functionality allows users to search for highlights by tags, category, or location.
+    - Search and Discovery: Robust search functionality allows users to search for highlights by content, category, or user.
     - User profiles: Users can view each others profiles and comment on individual highlights.
-    - Calendar display: The user can view their highlights on a calendar view, providing a convenient and efficient way to keep track of their highlights over time.
     - Follow and Un-follow: Users are able to follow or un-follow other users to foster a more engaged and connected community.
 
 ### 3. Structure
+
+![Sitemap](docs/wireframes/sitemap.png)
+
 ### 4. Skeleton
 
 #### Database
@@ -127,6 +117,17 @@ Visit backend repo.
 
 ![Color Palette](/docs//readme/color-palette.png)
 
+## Features
+
+### Components
+
+### Pages
+
+### Future Features
+
+- Location data
+- Calendar view
+
 ## Technologies Used
 
 ### Languages and Frameworks
@@ -141,9 +142,7 @@ React Router
 
 [Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component)
 
-## Validation
-
-## Testing
+## Testing & Validation
 
 ## Bugs
 
