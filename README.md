@@ -38,7 +38,9 @@ Key features:
 
 #### User Stories
 
-For more details on the user stoies go to the [projects kanban board](https://github.com/users/DanMorriss/projects/8)
+For more details on the user stories go to the [projects KANBAN board](https://github.com/users/DanMorriss/projects/8)
+
+**First Sprint**
 
 Create an account & Login
 - Landing Page
@@ -48,6 +50,7 @@ Create an account & Login
 - Log out
 - Remain logged in
 
+**Second Sprint**
 
 Creating Highlights
 - Create Highlight
@@ -59,6 +62,8 @@ Highlight Feeds
 - Highlights Feed
 - Liked Highlights
 - Discover Highlights
+
+**Third Sprint**
 
 Profile pages
 - Edit Profile
@@ -73,6 +78,8 @@ Interactivity
 - Edit a Comment
 - Delete a Comment
 - Follow/un-follow a User
+
+**Fourth Sprint**
 
 General
 - Contact Form
@@ -143,17 +150,45 @@ The color palette was built using [Adobe Color](https://color.adobe.com/)
 
 ## Technologies Used
 
-### Languages and Frameworks
+### Languages
 
-### Libraries & Tools
+- HTML
+- CSS
+- JavaScript
 
-[React Bootstrap](https://react-bootstrap-v4.netlify.app/)
+### Frameworks, Libraries & Tools
 
-[Favicon.io](https://favicon.io/favicon-converter/) for the favicon conversion
+- [Django Rest Framework](https://www.django-rest-framework.org/) - Backend API
+- [React](https://react.dev/) - Library for JS
+- [React Bootstrap](https://react-bootstrap-v4.netlify.app/) - CSS libraby
+- [Canva](https://www.canva.com/en_gb/) - Wire-frame and design
+- [GitPod](https://gitpod.io/workspaces) - Virtual IDE
+- [GitHub](https://github.com/) - Repo hosting
+- [Heroku](https://dashboard.heroku.com/apps) - Deployment
+- [Font Awesome](https://fontawesome.com/) - Icons
+- [Google Fonts](https://fonts.google.com/) - Fonts
+- [LucidChart](https://lucid.app/) - Development of flowchart
+- [Chrome Dev Tools](https://developer.chrome.com/docs/devtools) - Development and bug fixing
+- [Favicon.io](https://favicon.io/favicon-converter/) - Favicon conversion
+- [React Router](https://v5.reactrouter.com/web/guides/quick-start) - Dynamic routing
+- [React Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component) - for instant loading and infinite scrolling
+- [Axios](https://github.com/axios/axios) - Promise-based HTTP requests
+- [Adobe Color](https://color.adobe.com/) - Color Palette
+- [Am I Responsive?](https://ui.dev/amiresponsive) - Multi-device mockup
 
-React Router
+Validation:
+[WC3 Validator](https://validator.w3.org/) - validate the html
+[Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) - validate the css
+[ESLint](https://eslint.org/) - validate JS code
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) - validate performance, accessibility, best practice and SEO
+[Wave](https://wave.webaim.org/) - evaluate application accessibility
 
-[Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component)
+## Resources
+
+- Code Institute Moments walkthrough
+- React Bootstrap Docs
+- Stack Overflow
+- Slack Community
 
 ## Testing & Validation
 
