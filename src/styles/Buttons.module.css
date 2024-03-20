@@ -16,6 +16,24 @@
   color: #2142b2;
 }
 
+.Secondary {
+  border-radius: 1.5rem;
+  margin: 0.5rem;
+  padding: 4px 10px;
+  min-width: 75px;
+  margin: 5px;
+  border: 1px solid #2142b2;
+  background-color: #ffffff;
+  color: #2142b2;
+}
+
+.Secondary:hover {
+  cursor: pointer;
+  border: 1px solid #2142b2;
+  background-color: #2142b2;
+  color: #ffffff;
+}
+
 .Blue {
     background-color: #2142b2;
     color: #ffffff;
@@ -26,6 +44,8 @@
     background-color: #ffffff;
     color: #2142b2;
   }
+
+
 
   .FollowBtn {
     border-radius: 0.7rem;

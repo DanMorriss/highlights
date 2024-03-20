@@ -16,9 +16,9 @@ const About = () => {
   const currentUser = useCurrentUser();
   return (
     <div className={styles.Background}>
-      <Card className="text-center p-3 shadow-lg" style={{ width: "40rem" }}>
+      <Card className="text-center p-3 shadow-lg mt-5" style={{ width: "40rem" }}>
         <Card.Body>
-          <h1 className={appStyles.Handwritten}>Highlights</h1>
+          <h1 className={`${appStyles.Handwritten} ${styles.Heading1}`}>Highlights</h1>
           <Card.Text className="text-muted pt-3">
             The daily companion for sharing the highlights of your day in just a
             few minutes.
@@ -26,7 +26,7 @@ const About = () => {
           <h2 className={`${styles.Heading2} text-muted`}>
             What was the best part of your day?
           </h2>
-          <Card.Text className="text-muted pt-2">
+          <Card.Text className={`text-muted pt-2 ${styles.Content}`}>
             Practicing gratitude to boost positivity, reduce anxiety, and
             improve well-being. It's the simplest, science-backed way to a
             happier you.
@@ -50,10 +50,11 @@ const About = () => {
                 </Button>
               </Link>
               <Link to="/signin">
-                <Button className={btnStyles.Button} variant="primary">
+                <Button className={btnStyles.Secondary} variant="primary">
                   Sign In
                 </Button>
               </Link>
+              <p className="pt-3">Have a question? <Link to="/contact-us">Get in touch</Link></p>
             </>
           )}
         </Card.Body>

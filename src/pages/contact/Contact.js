@@ -18,7 +18,6 @@ import btnStyles from "../../styles/Buttons.module.css";
  * @return {JSX.Element} The contact form component
  */
 const Contact = () => {
-  useRedirect("loggedOut");
   const currentUser = useCurrentUser();
   const [contactFormData, setContactFormData] = useState({
     fname: "",
