@@ -123,7 +123,7 @@ const Highlight = (props) => {
       <Card.Body>
         <Media className="align-items-center justify-content-between">
           {/* Image link to users profile */}
-          <Link to={`/profiles/${profile_id}`}>
+          <Link className={`${styles.User}`} to={`/profiles/${profile_id}`}>
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
