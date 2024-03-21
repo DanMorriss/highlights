@@ -27,3 +27,7 @@
 .Link {
     font-size: 1.2rem;
 }
+
+.Link a {
+    color: #2142b2;
+}
