@@ -54,7 +54,7 @@ const About = () => {
                   Sign In
                 </Button>
               </Link>
-              <p className="pt-3">Have a question? <Link to="/contact-us">Get in touch</Link></p>
+              <p className={`pt-3 ${styles.Link}`}>Have a question? <Link to="/contact-us">Get in touch</Link></p>
             </>
           )}
         </Card.Body>
