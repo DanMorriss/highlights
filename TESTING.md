@@ -2,7 +2,9 @@
 
 ## Validation
 
-### HTML Validation
+The Highlights site has been passed through the [WC3 HTML Validator](https://validator.w3.org/), the [W3C Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/), the [ESLint JavaScript Validator](https://eslint.org/) and the [Google Chrome Lighthouse Validator](https://developer.chrome.com/docs/lighthouse/overview/).
+
+### HTML Validation - W3C
 
 The WC3 Validator was used on the following pages.
 
@@ -43,7 +45,7 @@ Feedback page
 404 page
 ![404 page html report](./docs/readme/html_404.png)
 
-### CSS Validation
+### CSS Validation - Jigsaw
 
 All the pages were passed through the W3C CSS Validation Service with no errors found. 
 
@@ -101,11 +103,11 @@ SignInForm.module.css
 SignUp.module.css
 ![CSS sign up report](./docs/readme/css_signup.png)
 
-### JavaScript Validation
+### JavaScript Validation - ESLint
 
 The ESLint validator plugin was used throughout development and no errors were present on final deployment.
 
-### Lighthouse Validation
+### Lighthouse Validation - Accessibility
 
 The Chrome Lighthouse Dev Tool was used to test performance, accessibility, best practices and SEO on both desktop and mobile.
 
@@ -124,3 +126,39 @@ The Chrome Lighthouse Dev Tool was used to test performance, accessibility, best
 
 ## Testing
 
+### Jest
+
+
+### Manual
+
+| User Story             | Test | Result |
+|------------------------|------|--------|
+| Landing Page           |      |        |
+| Navbar                 |      |        |
+| Create Account         |      |        |
+| Log in                 |      |        |
+| Log out                |      |        |
+| Remain logged in       |      |        |
+| Create highlight       |      |        |
+| View highlight         |      |        |
+| Update highlight       |      |        |
+| Delete Highlight       |      |        |
+| Highlights feed        |      |        |
+| Liked highlights       |      |        |
+| Discover highlights    |      |        |
+| Edit profile           |      |        |
+| Change password        |      |        |
+| Who to follow list     |      |        |
+| User profiles          |      |        |
+| Like a highlights      |      |        |
+| Unlike a highlight     |      |        |
+| Comment on a highlight |      |        |
+| View comments          |      |        |
+| Edit a comment         |      |        |
+| Delete a comment       |      |        |
+| Follow a user          |      |        |
+| Unfollow a user        |      |        |
+| Contact form           |      |        |
+| Responsive site        |      |        |
+| Simple user navigation |      |        |
+| 404 page               |      |        |

@@ -79,12 +79,9 @@ Interactivity
 
 General
 - Contact Form
-- Tag users in a highlight.
-- Add location.
 - Responsive site.
 - Simple user navigation.
 - 404 page.
-- User messages.
 
 ### 2. Scope
 
