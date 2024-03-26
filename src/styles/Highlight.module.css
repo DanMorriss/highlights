@@ -14,10 +14,9 @@
   right: 0;
   border-width: 0 2rem 2rem 0;
   border-style: solid;
-  border-color: #DECFBC #FFF5E6;
+  border-color: #decfbc #fff5e6;
   transition: ease-in-out 0.3s;
   box-shadow: rgba(0, 0, 0, 0.15) -2.4px 2px 2px;
-
 }
 
 .Highlight:hover::before {
@@ -55,7 +54,7 @@ h5 {
   font-family: "Homemade Apple", cursive;
   font-size: 1.4rem;
   font-weight: 900;
-  color:#453a2c;
+  color: #453a2c;
   text-decoration: none;
 }
 
@@ -75,4 +74,11 @@ h5 {
 
 .User {
   color: #453a2c;
+}
+
+.Paper {
+  height: 100%;
+  background-image: repeating-linear-gradient(#fcf6ed 0px, #fcf6ed 36px, rgba(0, 128, 128, 0.303) 38px);
+  background-repeat: no-repeat;
+  background-position: 0px 60px;
 }
