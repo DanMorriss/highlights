@@ -7,7 +7,7 @@
 
 ## About
 
-Highlights ia a social media platform designed to cultivate gratitude and positivity in everyday life. Inspired by the principles of the Five Minute Journal, our platform provides users with a space to share the highlights of their day and connect with others in a supportive online community.
+Highlights ia a social media platform designed to cultivate gratitude and positivity in everyday life. Inspired by the principles of the Five Minute Journal, the platform provides users with a space to share the highlights of their day and connect with others in a supportive online community.
 
 Key Features:
 - Highlight Sharing: Easily post and share the highlights of your day, complete with text descriptions and images.
@@ -18,7 +18,7 @@ Key Features:
 
 ## UX
 
-I followed the five planes of Website Design in the creation of this project.
+The five planes of Website Design were followed in the creation of this project.
 
 ### 1. Strategy
 
@@ -105,14 +105,16 @@ The sitemap was made using [Lucid Chart](https://lucid.app/)
 
 #### Wireframes
 
-![Landing page wireframe](/docs/wireframes/landing-page-wireframe.png)
-![signup wireframe](/docs/wireframes/signup-wireframe.png)
-![login wireframe](/docs/wireframes/login-wireframe.png)
-![feed wireframe](/docs/wireframes/feed-wireframe.png)
-![create highlight wireframe](/docs/wireframes/add-a-highlight-woreframe.png)
-![highlight wireframe](/docs/wireframes/highlight-wireframe.png)
-![profile wireframe](/docs/wireframes/profile-wireframe.png)
+![Landing page wireframe](/docs/wireframes/landing-page-wireframe.jpg)
+![signup wireframe](/docs/wireframes/signup-wireframe.jpg)
+![login wireframe](/docs/wireframes/login-wireframe.jpg)
+![feed wireframe](/docs/wireframes/feed-wireframe.jpg)
+![create highlight wireframe](/docs/wireframes/add-a-highlight-wireframe.jpg)
+![highlight wireframe](/docs/wireframes/highlight-wireframe.jpg)
+![profile wireframe](/docs/wireframes/profile-wireframe.jpg)
+![contact us wireframe](/docs/wireframes/contact-us-wireframe.jpg)
 [Canva](https://www.canva.com/en_gb/) was used to create the wireframes.
+
 ### 5. Surface
 
 - Color and themes were based on the five minute journal, using earthy calming colors and a mix of clean and handwritten fonts.
@@ -125,7 +127,8 @@ The color palette was built using [Adobe Color](https://color.adobe.com/)
 - #CDB990
 - #CF8562
 
-![Fonts](/docs/readme/fonts.jpg)
+
+![Fonts](/docs/readme/fonts.jpg)  
 [Google Fonts](https://fonts.google.com/) supplied the fonts
 - Montserrat
 - Homemade Apple
@@ -137,6 +140,8 @@ The color palette was built using [Adobe Color](https://color.adobe.com/)
 ### Pages
 
 ### Future Features
+
+
 
 - Location data
 - Calendar view

@@ -1,8 +1,23 @@
+- [Testing & Validation](#testing-validation)
+   * [Validation](#validation)
+      + [HTML Validation - W3C](#html-validation-w3c)
+      + [CSS Validation - Jigsaw](#css-validation-jigsaw)
+      + [JavaScript Validation - ESLint](#javascript-validation-eslint)
+      + [Lighthouse Validation - Accessibility](#lighthouse-validation-accessibility)
+   * [Testing](#testing)
+      + [Manual Testing of User Stories](#manual-testing-of-user-stories)
+      + [Responsiveness](#responsiveness)
+      + [Browser compatibility](#browser-compatibility)
+
 # Testing & Validation
 
 ## Validation
 
-The Highlights site has been passed through the [WC3 HTML Validator](https://validator.w3.org/), the [W3C Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/), the [ESLint JavaScript Validator](https://eslint.org/) and the [Google Chrome Lighthouse Validator](https://developer.chrome.com/docs/lighthouse/overview/).
+The Highlights site has been passed through the following validators: 
+- [WC3 HTML Validator](https://validator.w3.org/)
+- [W3C Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/)
+- [ESLint JavaScript Validator](https://eslint.org/)
+- [Google Chrome Lighthouse Validator](https://developer.chrome.com/docs/lighthouse/overview/).
 
 ### HTML Validation - W3C
 
@@ -21,29 +36,39 @@ Discover page
 ![discover page html report](./docs/readme/html_discover.png)
 
 Feed page
+![feed page html report](./docs/readme/html_feed.png)
 
 Liked page
+![liked page html report](./docs/readme/html_liked.png)
 
 Profile page
 ![profile page html report](./docs/readme/html_profile.png)
 
 Highlight page
+![highlight page html report](./docs/readme/html_highlight.png)
 
 Add highlight form
+![add highlight html report](./docs/readme/html_create_highlight.png)
 
 Edit highlight form
+![edit highlight form html report](./docs/readme/html_highlight_edit.png)
 
 Edit profile page
+![edit profile page html report](./docs/readme/html_profile_edit.png)
 
 Change username page
+![change username html report](./docs/readme/html_username_edit.png)
 
 Change password page
+![change password html report](./docs/readme/html_change_password.png)
 
 Feedback page
 ![feedback page html report](./docs/readme/html_feedback.png)
 
 404 page
 ![404 page html report](./docs/readme/html_404.png)
+
+[Back to top](#testing--validation)
 
 ### CSS Validation - Jigsaw
 
@@ -103,6 +128,8 @@ SignInForm.module.css
 SignUp.module.css
 ![CSS sign up report](./docs/readme/css_signup.png)
 
+[Back to top](#testing--validation)
+
 ### JavaScript Validation - ESLint
 
 The ESLint validator plugin was used throughout development and no errors were present on final deployment.
@@ -117,19 +144,17 @@ The Chrome Lighthouse Dev Tool was used to test performance, accessibility, best
 **Landing Page - Mobile**
 ![Landing page Lighthouse mobile](./docs/readme/lighthouse_landing_mobile.png)
 
-
 **Discover Page - Desktop**
 ![Discover page Lighthouse desktop](./docs/readme/lighthouse_discover_desktop.png)
 
 **Discover Page - Mobile**
 ![Discover page Lighthouse mobile](./docs/readme/lighthouse_discover_moile.png)
 
+[Back to top](#testing--validation)
+
 ## Testing
 
-### Jest
-
-
-### Manual
+### Manual Testing of User Stories
 
 | User Story                                                                                                    | Test                                                                                                                                                    | Expected                                                                                                                                            | Result      |
 |---------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
@@ -170,3 +195,36 @@ The Chrome Lighthouse Dev Tool was used to test performance, accessibility, best
 | As a site visitor I can send a message to the site owners so that I can pass on my feedback.                  | As a logged in user navigate to the landing page via the logo in the navbar and click the send us a message button, fill out the form and click submit. | The form data is sent to the API and the user is sent to a confirmation page.                                                                       | As expected |
 |                                                                                                               | From the landing page click the get in touch link and fill out the form.                                                                                | The form data is sent to the API and the user is sent to a confirmation page.                                                                       | As expected |
 | As a user I can view a 404 page for invalid urls so that I know the page does not exist.                      | Add some random characters to the end of the url and click enter. eg https://pp5-highlights-a86c2f8f4016.herokuapp.com/discoverdfgsd                    | A custom 404 page is displayed.                                                                                                                     | As expected |
+
+[Back to top](#testing--validation)
+
+### Responsiveness
+
+All pages were tested to ensure responsiveness on screen sizes from 320px and upwards as defined in WCAG 2.1 Reflow criteria for responsive design on Chrome, Firefox and Safari.
+
+Steps to test:
+
+- Open browser and navigate to [Highlights](https://pp5-highlights-a86c2f8f4016.herokuapp.com/)
+- Open the developer tools (right click and inspect)
+- Set to responsive and decrease width to 320px
+- Click and drag the responsive window slowly to maximum width
+
+Expected:
+
+Website is responsive on all screen sizes and no images are pixelated or stretched. No horizontal scroll is present. No elements overlap.
+
+Actual:
+
+Website behaved as expected.
+
+[Back to top](#testing--validation)
+
+### Browser compatibility
+
+Testing has been carried out on the following browsers:
+
+- Google Chrome
+- Firefox
+- Safari
+
+[Back to top](#testing--validation)
