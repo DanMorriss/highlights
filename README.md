@@ -137,7 +137,51 @@ The color palette was built using [Adobe Color](https://color.adobe.com/)
 
 ### Components
 
+Asset/Spinner
+
+Avatar
+
+MoreDropdown
+
+Navbar
+
+PageNotFound
+
 ### Pages
+
+About / Landing
+
+Sign up
+
+Sign in
+
+Contact / Feedback
+
+Thanks
+
+Create & Edit a Highlight
+
+View a highlight
+
+Feed pages
+
+Comment 
+
+Like
+
+Profile
+
+Edit Profile
+
+Change Username
+
+Change Password
+
+Who to follow
+
+Follow a user
+
+
 
 ### Future Features
 

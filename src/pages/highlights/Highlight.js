@@ -78,9 +78,9 @@ const Highlight = (props) => {
   const handleLike = async () => {
     try {
       const { data } = await axiosRes.post("/likes/", { highlight: id });
-      setHighlight((prevHighlights) => ({
-        ...prevHighlights,
-        results: prevHighlights.results.map((highlight) => {
+      setHighlight((prevHighlight) => ({
+        ...prevHighlight,
+        results: prevHighlight.results.map((highlight) => {
           return highlight.id === id
             ? {
                 ...highlight,
@@ -101,9 +101,9 @@ const Highlight = (props) => {
   const handleUnlike = async () => {
     try {
       await axiosRes.delete(`/likes/${like_id}/`);
-      setHighlight((prevHighlights) => ({
-        ...prevHighlights,
-        results: prevHighlights.results.map((highlight) => {
+      setHighlight((prevHighlight) => ({
+        ...prevHighlight,
+        results: prevHighlight.results.map((highlight) => {
           return highlight.id === id
             ? {
                 ...highlight,
