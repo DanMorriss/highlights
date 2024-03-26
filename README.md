@@ -188,8 +188,6 @@ Validation:
 - Slack Community
 
 ## Testing & Validation
-Needed to run the following commands to use the correct version of npm:  
-`nvm install 16 && use 16`  
 
 For details on testing and validation view the dedicated [testing.md](./TESTING.md) file.
 
@@ -218,3 +216,73 @@ Inside the CurrentUserContext.js file I was trying to return axiosReq(err.config
 - The like button was only showing a new like on a page refresh. I had named the method setHighlights instead of setHighlight (as I did in the parent element), renaming the method fixed it.
 
 - After deleting a highlight, the user was being sent back to the editHighlight form, I sent them to the feed page instead.
+
+## Project Setup and Initial Deployment
+
+- Create a new repository in GitHub.
+
+- Create new workspace by clicking 'Gitpod' button.
+
+- Once workspace has loaded, run terminal command to create React app.  
+```
+npx create-react-app . --use-npm
+```
+
+- To install Bootstrap, run terminal command  
+```
+npm install react-bootstrap@1.6.3 bootstrap@4.6.0
+```
+
+- To run the app type the command  
+```
+nvm install 16 && use 16
+```  
+then  
+```
+npm start
+```  
+
+- Once the app is installed, run terminal command npm start to check app is working. Browser should open with the spinning React logo on a dark blue background.
+
+### Create a new app in Heroku.
+
+- Go to 'Settings' and ensure that heroku/nodejs buildpack is present. If it is not, click on 'Add Buildpack', select 'nodejs' and save changes.
+- Click on the 'Deploy' tab and go to 'Deployment Method'. Click on GitHub.
+- Go to 'App connected to GitHub' and search for the relevant repository. Select that repository and click 'Connect'.
+- Go to 'Manual Deploy' section and click 'Deploy Branch'. Click on 'build logs' to monitor build and ensure deployment is successful. Build is complete when log states 'Build succeeded!'.
+- Click 'Open App' button to view newly deployed app.
+
+## Forking the GitHub Repository
+
+- Go to the GitHub repository
+- Click on Fork button in top right corner
+- You will then have a copy of the repository in your own GitHub account.
+
+## Making a Local Clone
+
+- Go to the GitHub repository
+- Click the Code button above the list of files
+- Highlight the "HTTPS" button to clone with HTTPS and copy the link
+- Open the command line interface on your local computer
+- Change the current working directory to the one where you want the cloned directory
+- Type git clone and paste the URL from the clipboard
+```
+git clone https://github.com/DanMorriss/highlights.git
+```
+- Press Enter to create your local clone
+
+## Credits
+
+### Images
+
+All images used were from [Canva](https://www.canva.com/en_gb/)
+
+### Code
+
+This project was inspired by the Code Institute moments walkthrough project. I have modified the styles and code and functionality to fit the needs of the project. Further changes are planned and can be read about further in the [future features](#future-features) section.
+
+### Acknowledgements
+
+- My mentor [Lauren-Nicole](https://github.com/CluelessBiker) for her advice and guidance throughout the project
+- Code Institute tutors John, Sarah & Holly for their help in fixing some hard to reach bugs
+- The Code Institute Slack community for continued moral support
