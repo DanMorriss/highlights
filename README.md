@@ -137,55 +137,91 @@ The color palette was built using [Adobe Color](https://color.adobe.com/)
 
 ### Components
 
-Asset/Spinner
+Asset/Spinner  
+![spinner](./docs/readme/spinner.gif)
 
-Avatar
+Avatar  
+![avatar](./docs/readme/avatar.png)
 
-MoreDropdown
+MoreDropdown  
+![dropdown menu](./docs/readme/dropdown.gif)
 
 Navbar
 
+Desktop - signed in
+![navbar on desktop for a signed in user](./docs/readme/navbar_signed_in.png)
+
+Desktop - signed out
+![navbar on desktop for a non signed in user](./docs/readme/navbar_signed_out.png)
+
+Mobile - singed in
+![nav bar on mobile for a signed in user](./docs/readme/mobile_navbar_signed_in.gif)
+
+Mobile - signed out
+![nav bar on a mobile device for a non signed in user](./docs/readme/mobile_navbar_signed_out.gif)
+
 PageNotFound
+![404 page](./docs/readme/404.png)
 
 ### Pages
 
 About / Landing
+![landing page](./docs/readme/landing.png)
 
 Sign up
+![sign up page](./docs/readme/signup.png)
 
 Sign in
+![sign in page](./docs/readme/signin.png)
 
-Contact / Feedback
+Feedback page
+![feedback page](./docs/readme/contact.png)
 
 Thanks
+![thanks for getting in touch page](./docs/readme/thanks.png)
 
-Create & Edit a Highlight
+Create a highlight
+
+Edit a Highlight
+![edit a highlight dropdown menu](./docs/readme/edit_highlight_menu.gif)
+![edit a highlight form](./docs/readme/edit_highlight.png)
+
+Delete a highlight
+![deleting a highlight](./docs/readme/delete_highlight.gif)
 
 View a highlight
+![viewing a highlight](./docs/readme/view_highlight.gif)
 
 Feed pages
+![feed pages](./docs/readme/highlights_pages.gif)
 
 Comment 
+![add a comment](./docs/readme/comment.gif)
 
 Like
+![like and unlike a highlight](./docs/readme/like.gif)
 
 Profile
+![profile](./docs/readme/profile.png)
 
 Edit Profile
+![edit a profile](./docs/readme/edit_profile.gif)
 
 Change Username
+![change username](./docs/readme/change_username.gif)
 
 Change Password
+![change password](./docs/readme/change_password.gif)
 
 Who to follow
+![who to follow](./docs/readme/who_to_follow.png)
+![who to follow mobile](./docs/readme/who_to_follow_mobile.png)
 
 Follow a user
-
+![following and un following a user](./docs/readme/follow.gif)
 
 
 ### Future Features
-
-
 
 - Location data
 - Calendar view
