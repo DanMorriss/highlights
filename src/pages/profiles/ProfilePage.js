@@ -85,10 +85,10 @@ function ProfilePage() {
             <p>{profile?.location}</p>
           )}
           <Row className="justify-content-center no-gutters">
-            {/* Posts */}
+            {/* Highlights */}
             <Col xs={3} className="my-2">
               <div>{profile?.posts_count}</div>
-              <div>posts</div>
+              <div>highlights</div>
             </Col>
             {/* Followers */}
             <Col xs={3} className="my-2">
