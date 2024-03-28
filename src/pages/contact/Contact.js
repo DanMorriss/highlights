@@ -74,11 +74,16 @@ const Contact = () => {
                 onChange={handleChange}
               />
             </Form.Group>
-            {errors.content?.map((message, idx) => (
+            {errors.fname?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
             ))}
+            {/* {errors.content?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))} */}
 
             {/* Last Name */}
             <Form.Group>
@@ -91,7 +96,7 @@ const Contact = () => {
                 onChange={handleChange}
               />
             </Form.Group>
-            {errors.content?.map((message, idx) => (
+            {errors.lname?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -108,7 +113,7 @@ const Contact = () => {
                 onChange={handleChange}
               />
             </Form.Group>
-            {errors.content?.map((message, idx) => (
+            {errors.email?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -119,11 +124,11 @@ const Contact = () => {
               <Form.Label className="d-none">Message</Form.Label>
               <Form.Control
                 placeholder="Your message..."
-                type="textarea"
+                as="textarea"
                 name="content"
                 value={content}
                 onChange={handleChange}
-                rows={4}
+                rows={3}
               />
             </Form.Group>
             {errors.content?.map((message, idx) => (
@@ -133,7 +138,12 @@ const Contact = () => {
             ))}
 
             {/* Submit Button */}
-            <button type="submit" className={`${btnStyles.Button} ${styles.Clickable}`}>Submit</button>
+            <button
+              type="submit"
+              className={`${btnStyles.Button} ${styles.Clickable}`}
+            >
+              Submit
+            </button>
           </Form>
         </Container>
       </Col>
