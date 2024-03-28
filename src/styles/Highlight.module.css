@@ -78,7 +78,7 @@ h5 {
 
 .Paper {
   height: 100%;
-  background-image: repeating-linear-gradient(#fcf6ed 0px, #fcf6ed 36px, rgba(0, 128, 128, 0.303) 38px);
+  background-image: repeating-linear-gradient(#fcf6ed 0px, #fcf6ed 36px, rgba(0, 128, 128, 0.18) 38px);
   background-repeat: no-repeat;
   background-position: 0px 60px;
 }

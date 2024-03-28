@@ -1,9 +1,11 @@
+# Highlights
+
 ![Mockup image](./docs/readme/mockup.jpg)
 
-# Highlights
-[Deployed Frontend Site](https://pp5-highlights-a86c2f8f4016.herokuapp.com/)  
-[Deployed API](https://drf-highlights-319d26c2d75e.herokuapp.com/)  
-[API Repo](https://github.com/DanMorriss/drf-highlights)
+🚀 [Deployed Frontend Site](https://pp5-highlights-a86c2f8f4016.herokuapp.com/)  
+💻 [Deployed API](https://drf-highlights-319d26c2d75e.herokuapp.com/)  
+🔗 [API Repo](https://github.com/DanMorriss/drf-highlights)
+
 
 - [Highlights](#highlights)
    * [About](#about)
@@ -485,7 +487,7 @@ If a user navigated to an invalid url a custom 404 page will be displayed
 
 Now the site is as NVP the next set of features I plan to add are:
 
-- Location data: allow users to add location to their profile and a highlight.
+- Location data: allow users to add location to their profile and a highlight. The model is already created in the backend for this implementation.
 - Calendar view: Display a calendar on the profile page showing how often the user is posting.
 - Tag users in a highlight: allow users to tag others in a highlight.
 
@@ -520,10 +522,10 @@ Now the site is as NVP the next set of features I plan to add are:
 - [Am I Responsive?](https://ui.dev/amiresponsive) - Multi-device mockup
 
 Validation:
-[WC3 Validator](https://validator.w3.org/) - validate the html
-[Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) - validate the css
-[ESLint](https://eslint.org/) - validate JS code
-[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) - validate performance, accessibility, best practice and SEO
+- [WC3 Validator](https://validator.w3.org/) - validate the html
+- [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) - validate the css
+- [ESLint](https://eslint.org/) - validate JS code
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) - validate performance, accessibility, best practice and SEO
 
 [Back to top](#highlights)
 
@@ -568,7 +570,7 @@ No known unfixed bugs.
 
 - Create a new repository in GitHub.
 
-- Create new workspace by clicking 'Gitpod' button.
+- Create new workspace by clicking `Gitpod` button.
 
 - Once workspace has loaded, run terminal command to create React app.  
 ```
@@ -595,18 +597,18 @@ npm start
 
 ### Create a new app in Heroku.
 
-- Go to 'Settings' and ensure that heroku/nodejs buildpack is present. If it is not, click on 'Add Buildpack', select 'nodejs' and save changes.
-- Click on the 'Deploy' tab and go to 'Deployment Method'. Click on GitHub.
-- Go to 'App connected to GitHub' and search for the relevant repository. Select that repository and click 'Connect'.
-- Go to 'Manual Deploy' section and click 'Deploy Branch'. Click on 'build logs' to monitor build and ensure deployment is successful. Build is complete when log states 'Build succeeded!'.
-- Click 'Open App' button to view newly deployed app.
+- Go to `Settings` and ensure that heroku/nodejs buildpack is present. If it is not, click on `Add Buildpack`, select `nodejs` and save changes.
+- Click on the `Deploy` tab and go to `Deployment Method`. Click on `GitHub`.
+- Go to `App connected to GitHub` and search for the relevant repository. Select that repository and click `Connect`.
+- Go to `Manual Deploy` section and click `Deploy Branch`. Click on `build logs` to monitor build and ensure deployment is successful. Build is complete when log states `Build succeeded!`.
+- Click `Open App` button to view newly deployed app.
 
 [Back to top](#highlights)
 
 ## Forking the GitHub Repository
 
 - Go to the GitHub repository
-- Click on Fork button in top right corner
+- Click on `Fork` button in top right corner
 - You will then have a copy of the repository in your own GitHub account.
 
 [Back to top](#highlights)
@@ -614,8 +616,8 @@ npm start
 ## Making a Local Clone
 
 - Go to the GitHub repository
-- Click the Code button above the list of files
-- Highlight the "HTTPS" button to clone with HTTPS and copy the link
+- Click the `Code` button above the list of files
+- Highlight the `HTTPS` button to clone with HTTPS and copy the link
 - Open the command line interface on your local computer
 - Change the current working directory to the one where you want the cloned directory
 - Type git clone and paste the URL from the clipboard
@@ -630,7 +632,7 @@ git clone https://github.com/DanMorriss/highlights.git
 
 ### Images
 
-All images used were from [Canva](https://www.canva.com/en_gb/)
+All images used and designs were from or created with [Canva](https://www.canva.com/en_gb/)
 
 ### Code
 
@@ -641,6 +643,7 @@ This project was inspired by the Code Institute moments walkthrough project. I h
 ### Acknowledgements
 
 - My mentor [Lauren-Nicole](https://github.com/CluelessBiker) for her advice and guidance throughout the project
+- Martina Terlevic for her support over the last hurdle in stress testing and trying to break my code.
 - Code Institute tutors John, Sarah & Holly for their help in fixing some hard to reach bugs
 - The Code Institute Slack community for continued moral support
 
