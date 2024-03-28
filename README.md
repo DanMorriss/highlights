@@ -450,9 +450,11 @@ A user can edit their own profile by clicking in the 3 dots dropdown menu at the
 - Password
 
 **Change Username**
+
 ![change username](./docs/readme/change_username.gif)
 
 **Change Password**
+
 ![change password](./docs/readme/change_password.gif)
 
 [Back to top](#highlights)

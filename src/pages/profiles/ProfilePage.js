@@ -88,17 +88,18 @@ function ProfilePage() {
             {/* Highlights */}
             <Col xs={3} className="my-2">
               <div>{profile?.posts_count}</div>
-              <div>highlights</div>
+              <div className={styles.Stats}>highlights</div>
+
             </Col>
             {/* Followers */}
             <Col xs={3} className="my-2">
               <div>{profile?.followers_count}</div>
-              <div>followers</div>
+              <div className={styles.Stats}>followers</div>
             </Col>
             {/* Following */}
             <Col xs={3} className="my-2">
               <div>{profile?.following_count}</div>
-              <div>following</div>
+              <div className={styles.Stats}>following</div>
             </Col>
           </Row>
         </Col>

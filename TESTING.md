@@ -1,3 +1,5 @@
+# Testing & Validation
+
 - [Testing & Validation](#testing-validation)
    * [Validation](#validation)
       + [HTML Validation - W3C](#html-validation-w3c)
@@ -8,8 +10,6 @@
       + [Manual Testing of User Stories](#manual-testing-of-user-stories)
       + [Responsiveness](#responsiveness)
       + [Browser compatibility](#browser-compatibility)
-
-# Testing & Validation
 
 ## Validation
 
